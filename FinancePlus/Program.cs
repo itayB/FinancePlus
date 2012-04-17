@@ -18,7 +18,6 @@ namespace FinancePlus
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
          
-            //Database.loadDemyData();
             Database.load();
 
             //DataReader.read();
