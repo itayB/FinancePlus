@@ -1,0 +1,22 @@
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\bin\Debug\FinancePlus.exe
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\bin\Debug\FinancePlus.pdb
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\obj\x86\Debug\FinancePlus.Form1.resources
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\obj\x86\Debug\FinancePlus.Properties.Resources.resources
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\obj\x86\Debug\FinancePlus.exe
+C:\Users\Itay\AppData\Local\Temporary Projects\FinancePlus\obj\x86\Debug\FinancePlus.pdb
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.exe
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.pdb
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\bin\Debug\FinancePlus.exe
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\bin\Debug\FinancePlus.pdb
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.Properties.Resources.resources
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.CategoryForm.resources
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.ReportForm.resources
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.MonthForm.resources
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.CommentForm.resources
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.FilterForm.resources

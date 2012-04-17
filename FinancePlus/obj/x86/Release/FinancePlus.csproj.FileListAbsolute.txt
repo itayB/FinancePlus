@@ -1,0 +1,7 @@
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Release\FinancePlus.CategoryForm.resources
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Release\FinancePlus.Form1.resources
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Release\FinancePlus.Properties.Resources.resources
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Release\FinancePlus.ReportForm.resources
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Release\GenerateResource.write.1.tlog

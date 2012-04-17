@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TransactionsMap>
+  <TransactionMap>
+    <BusinessName>פז YELLOW גיל ראשון</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>די.בי.אס.ש.לווין</BusinessName>
+    <PrimaryCategory>תקשורת</PrimaryCategory>
+    <SecondaryCategory>כבלים</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>דלק קמעונאות שערי רא</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>כל בו חצי חינם בע"מ</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>שופרסל דיל מרכז ראשל</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>שוק חצי חינם ראשל"צ</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>טיב טעם רשתות ראשל"צ</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>יינות ביתן בע"מ אייר</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>יינות ביתן בע"מ</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>אלון בית דגן</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מ. יוחננוף ובניו בעמ</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פלאפון חשבון תקופתי</BusinessName>
+    <PrimaryCategory>תקשורת</PrimaryCategory>
+    <SecondaryCategory>טלפון סלולרי</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מ.ד צמיגי טופ 2008 ב</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>אחזקת רכב ותיקונים</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>צמיגי עידן</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>אחזקת רכב ותיקונים</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>B בזק הוראת קבע</BusinessName>
+    <PrimaryCategory>תקשורת</PrimaryCategory>
+    <SecondaryCategory>אינטרנט</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>סלקום רכישת ציוד</BusinessName>
+    <PrimaryCategory>תקשורת</PrimaryCategory>
+    <SecondaryCategory>טלפון סלולרי</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>חשבון לשרותי סלקום</BusinessName>
+    <PrimaryCategory>תקשורת</PrimaryCategory>
+    <SecondaryCategory>טלפון סלולרי</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מיקי גולן</BusinessName>
+    <PrimaryCategory>טיפוח ויופי</PrimaryCategory>
+    <SecondaryCategory>מספרה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פז YELLOW יציב -</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>סונול עטרת</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>אלון חוצה ישראל מגל</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פז YELLOW אורלי גהה</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>דלק קמעונאות שהבני</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>דלק קמעונאות רמת השר</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>דלק מנטה בית דגן</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>בזק בינלאומי בע"מ</BusinessName>
+    <PrimaryCategory>תקשורת</PrimaryCategory>
+    <SecondaryCategory>אינטרנט</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>סוהו</BusinessName>
+    <PrimaryCategory>תרבות פנאי ובילוי</PrimaryCategory>
+    <SecondaryCategory>מסעדות</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>ד. סהר משקאות</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>אלכוהול</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>סושה מזון איכות בע"מ</BusinessName>
+    <PrimaryCategory>תרבות פנאי ובילוי</PrimaryCategory>
+    <SecondaryCategory>מסעדות</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>אירית אושר מכון קוסמ</BusinessName>
+    <PrimaryCategory>טיפוח ויופי</PrimaryCategory>
+    <SecondaryCategory>קוסמטיקה (טיפולים)</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>בלק בר אנד בורגר</BusinessName>
+    <PrimaryCategory>תרבות פנאי ובילוי</PrimaryCategory>
+    <SecondaryCategory>מסעדות</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>חב' חשמל מוקד אזורי</BusinessName>
+    <PrimaryCategory>מיסים ותשלומים</PrimaryCategory>
+    <SecondaryCategory>חשמל</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>נאפיס ראשל"צ</BusinessName>
+    <PrimaryCategory>תרבות פנאי ובילוי</PrimaryCategory>
+    <SecondaryCategory>מסעדות</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מניב ראשון בעמ</BusinessName>
+    <PrimaryCategory>מיסים ותשלומים</PrimaryCategory>
+    <SecondaryCategory>מים</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פזגז איילון בע"מ</BusinessName>
+    <PrimaryCategory>מיסים ותשלומים</PrimaryCategory>
+    <SecondaryCategory>גז</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>קסטרו פתח תקווה</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>רנואר רשת פ"ת גברים</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פול אנד בר פ"ת</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פזגז ראשונים בע"מ</BusinessName>
+    <PrimaryCategory>מיסים ותשלומים</PrimaryCategory>
+    <SecondaryCategory>גז</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מסעדה לבנונית א. גוש</BusinessName>
+    <PrimaryCategory>תרבות פנאי ובילוי</PrimaryCategory>
+    <SecondaryCategory>מסעדות</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>שירביט אלמנטרי</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>ביטוח רכב</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>לוצ'י ליין</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>אינטימה קניון אבנת פ</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מגדל ב.כללי ה.קבע</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>ביטוח רכב</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מגה בעיר נווה שקמה ר</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מ. התחבורה ר.רכב</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>טסט ואגרת רישוי</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>דור כפר טרומן</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>דלק</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>עיריית ראשל"צ-מענה ק</BusinessName>
+    <PrimaryCategory>מיסים ותשלומים</PrimaryCategory>
+    <SecondaryCategory>ארנונה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>ורסצ'ה</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>קומפיוטסט ראשל"צ בע"</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>טסט ואגרת רישוי</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>קניון הזהב BEBE</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>הכשרה חובה אקספרס</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>ביטוח רכב</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פוקס ישקו בע"מ</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>ד.סהר משקאות</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>אלכוהול</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>S WAER</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>אפרודיטה הבאר</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>שפע ארוחות ושרות</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>ארוחות בעבודה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>מסעדת שגב אקספרס</BusinessName>
+    <PrimaryCategory>תרבות פנאי ובילוי</PrimaryCategory>
+    <SecondaryCategory>מסעדות</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>טוליו</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>ארוחות בעבודה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פיצה פרגו סניף פתח ת</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>ארוחות בעבודה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פוקס בילו סנטר</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>קפה קפה רשל"צ</BusinessName>
+    <PrimaryCategory>תרבות פנאי ובילוי</PrimaryCategory>
+    <SecondaryCategory>מסעדות</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>קרוקר נמל ת"א</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>קייטרינג שולץ פ"ת</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>ארוחות בעבודה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>נעלי חן</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פז YELLOW ק.אריה</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>ארוחות בעבודה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>ריבר נדלס בר (פ"ת) ב</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>ארוחות בעבודה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>סטיק האוס וויט הול</BusinessName>
+    <PrimaryCategory>תרבות פנאי ובילוי</PrimaryCategory>
+    <SecondaryCategory>מסעדות</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>הטאבון הראשוני בע"מ</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>מזון ומכולת</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>שירביט חובה</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>ביטוח רכב</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>פוקס בלינסון</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>קומפיוטסט</BusinessName>
+    <PrimaryCategory>תחבורה</PrimaryCategory>
+    <SecondaryCategory>אחזקת רכב ותיקונים</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>אקט 77 נמל ת"א</BusinessName>
+    <PrimaryCategory>קניות</PrimaryCategory>
+    <SecondaryCategory>ביגוד והנעלה</SecondaryCategory>
+  </TransactionMap>
+  <TransactionMap>
+    <BusinessName>ג'פניקה משלוחים ארצי</BusinessName>
+    <PrimaryCategory>הוצאות שוטפות</PrimaryCategory>
+    <SecondaryCategory>ארוחות בעבודה</SecondaryCategory>
+  </TransactionMap>
+</TransactionsMap>
