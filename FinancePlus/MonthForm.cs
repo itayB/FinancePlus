@@ -582,7 +582,7 @@ namespace FinancePlus
 
             foreach (ListViewGroup group in monthsCompListView.Groups)
             {
-                if (group.Header.ToString().StartsWith("הכנסות"))
+                if (group.Header.ToString().StartsWith(Database.INCOME_STRING))
                     continue;
                 Series s = new Series();
                 s.ChartType = SeriesChartType.StackedColumn;
