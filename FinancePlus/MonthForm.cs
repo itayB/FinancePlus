@@ -575,43 +575,6 @@ namespace FinancePlus
                 lvi.Group = getCategoryGroup(category.primary);
                 monthsCompListView.Items.Add(lvi);
             }
-
-/*
-                int i = 2;
-                double average = 0;
-                foreach (System.Windows.Forms.DataGridViewTextBoxColumn col in monthsColumns)
-                {
-                    if (col.Tag == null)
-                        continue;
-
-                    row[i] = Database.getTotalBillingPrice((DateTime)col.Tag, category);
-                    average += (double)row[i];
-                    i++;
-                }
-                // calc average
-                row[i] = Math.Round(average / (monthsColumns.Count - 1), 2);
-                int rowNum = dataGridView1.Rows.Add(row);
-
-                // colorize relevant rows
-                for (int j = 2; j < monthsColumns.Count + 2; j++)
-                    if ((double)row[i] < (double)row[j])
-                        dataGridView1.Rows[rowNum].Cells[j].Style.ForeColor = Color.Red;
-            }
-
-            // create sum last row
-            object[] totalRow = new object[monthsColumns.Count + 3];
-            totalRow[0] = Database.SUM;
-            foreach (System.Windows.Forms.DataGridViewTextBoxColumn col in monthsColumns)
-                if (col.Tag != null)
-                    totalRow[col.Index] = Database.getMonth((DateTime)col.Tag).getTotalExpenses();// Database.getTotalBillingPrice((DateTime)col.Tag);
-            dataGridView1.Rows.Add(totalRow);
-
-            DataGridViewCellStyle style = new DataGridViewCellStyle();
-            style.Font = new Font(dataGridView1.Font.FontFamily, dataGridView1.Font.Size, FontStyle.Bold);
-            foreach (DataGridViewCell c in dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells)
-                c.Style.ApplyStyle(style);
-*/
-
         }
 
         private void updateMonthsChart()
