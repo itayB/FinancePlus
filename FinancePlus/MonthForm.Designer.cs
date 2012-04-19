@@ -33,9 +33,6 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -103,8 +100,7 @@
             this.secondaryCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.primaryCategoryComboBox = new System.Windows.Forms.ComboBox();
-            this.categoryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.monthsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expensesChart)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -112,8 +108,7 @@
             this.monthTabPage.SuspendLayout();
             this.monthsCompTabPage.SuspendLayout();
             this.categoryCompTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthsChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // expenseslistView
@@ -537,7 +532,6 @@
             // 
             // monthsCompTabPage
             // 
-            this.monthsCompTabPage.Controls.Add(this.monthsChart);
             this.monthsCompTabPage.Controls.Add(this.monthsCompListView);
             this.monthsCompTabPage.Location = new System.Drawing.Point(4, 25);
             this.monthsCompTabPage.Name = "monthsCompTabPage";
@@ -560,7 +554,7 @@
             // 
             // categoryCompTabPage
             // 
-            this.categoryCompTabPage.Controls.Add(this.categoryChart);
+            this.categoryCompTabPage.Controls.Add(this.chart2);
             this.categoryCompTabPage.Controls.Add(this.label3);
             this.categoryCompTabPage.Controls.Add(this.secondaryCategoryComboBox);
             this.categoryCompTabPage.Controls.Add(this.label2);
@@ -687,49 +681,20 @@
             this.primaryCategoryComboBox.TabIndex = 7;
             this.primaryCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.primaryCategoryComboBox_SelectedIndexChanged);
             // 
-            // categoryChart
+            // chart2
             // 
-            this.categoryChart.BackColor = System.Drawing.Color.Transparent;
-            this.categoryChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.categoryChart.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.categoryChart.BorderlineColor = System.Drawing.Color.Transparent;
-            this.categoryChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.categoryChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.categoryChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.categoryChart.Legends.Add(legend3);
-            this.categoryChart.Location = new System.Drawing.Point(383, 340);
-            this.categoryChart.Name = "categoryChart";
-            series3.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series3.BorderColor = System.Drawing.Color.Transparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series3.Color = System.Drawing.Color.DodgerBlue;
-            series3.IsValueShownAsLabel = true;
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.ShadowColor = System.Drawing.Color.Transparent;
-            this.categoryChart.Series.Add(series3);
-            this.categoryChart.Size = new System.Drawing.Size(827, 265);
-            this.categoryChart.TabIndex = 12;
-            this.categoryChart.Text = "chart2";
-            // 
-            // monthsChart
-            // 
-            this.monthsChart.BackColor = System.Drawing.Color.Transparent;
-            this.monthsChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.monthsChart.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.monthsChart.BorderlineColor = System.Drawing.Color.Transparent;
-            this.monthsChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.monthsChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
+            this.chart2.BackColor = System.Drawing.Color.Transparent;
+            this.chart2.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chart2.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.chart2.BorderlineColor = System.Drawing.Color.Transparent;
+            this.chart2.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.chart2.BorderSkin.PageColor = System.Drawing.Color.Transparent;
             chartArea2.Name = "ChartArea1";
-            this.monthsChart.ChartAreas.Add(chartArea2);
+            this.chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.monthsChart.Legends.Add(legend2);
-            this.monthsChart.Location = new System.Drawing.Point(389, 345);
-            this.monthsChart.Name = "monthsChart";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(383, 340);
+            this.chart2.Name = "chart2";
             series2.BackSecondaryColor = System.Drawing.Color.Transparent;
             series2.BorderColor = System.Drawing.Color.Transparent;
             series2.ChartArea = "ChartArea1";
@@ -740,10 +705,10 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             series2.ShadowColor = System.Drawing.Color.Transparent;
-            this.monthsChart.Series.Add(series2);
-            this.monthsChart.Size = new System.Drawing.Size(827, 265);
-            this.monthsChart.TabIndex = 13;
-            this.monthsChart.Text = "chart2";
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(827, 265);
+            this.chart2.TabIndex = 12;
+            this.chart2.Text = "chart2";
             // 
             // MonthForm
             // 
@@ -771,8 +736,7 @@
             this.monthsCompTabPage.ResumeLayout(false);
             this.categoryCompTabPage.ResumeLayout(false);
             this.categoryCompTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthsChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -844,8 +808,7 @@
         private System.Windows.Forms.ComboBox secondaryCategoryComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox primaryCategoryComboBox;
-        private System.Windows.Forms.DataVisualization.Charting.Chart categoryChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart monthsChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
 
 
     }

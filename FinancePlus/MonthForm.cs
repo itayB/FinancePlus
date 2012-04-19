@@ -474,19 +474,12 @@ namespace FinancePlus
             clearAllMonthsComp();
             updateColumns();
             updateMonthsCompRows();
-            updateMonthsChart();
         }
 
         public void clearAllMonthsComp()
         {
             monthsCompListView.Columns.Clear();
             monthsCompListView.Items.Clear();
-            foreach (Series s in monthsChart.Series)
-            {
-                s.Points.Clear();
-                
-            }
-            monthsChart.Series.Clear();
         }
 
         public ColumnHeader addColumn(string name, string text, int width, object data)
@@ -614,33 +607,6 @@ namespace FinancePlus
 
         }
 
-        private void updateMonthsChart()
-        {
-
-            foreach (ListViewGroup group in monthsCompListView.Groups)
-            {
-                if (group.Header.ToString().StartsWith("הכנסות"))
-                    continue;
-                Series s = new Series();
-                s.ChartType = SeriesChartType.StackedColumn;
-                s.LegendText = group.Header;
-                monthsChart.Series.Add(s);
-                
-                foreach (ColumnHeader col in monthsCompListView.Columns)
-                {
-                    double total = 0;
-                    if (col.Tag != null)
-                    {
-                        foreach (ListViewItem item in group.Items)
-                            total += Double.Parse(item.SubItems[col.Index].Text);
-                        s.Points.AddXY(((DateTime)col.Tag).ToShortDateString(), total);
-                    }
-                    
-                }
-              
-            }
-        }
-
         ListViewGroup getCategoryGroup(string primaryCategory)
         {
             // Check each group if it fits to the item
@@ -689,7 +655,7 @@ namespace FinancePlus
             primaryCategoryComboBox.Items.Clear();
             secondaryCategoryComboBox.Items.Clear();
             categoryCompListView.Items.Clear();
-            categoryChart.Series[0].Points.Clear();
+            chart2.Series[0].Points.Clear();
         }
 
         public void updatePrimaryCategoryComboBox()
@@ -845,13 +811,13 @@ namespace FinancePlus
             HashSet<string> xValues = new HashSet<string>();
             foreach(DateTime d in data.Keys)
                 xValues.Add(d.ToShortDateString());
-            categoryChart.Series[0].Points.DataBindXY(xValues.ToArray(), yValues);
+            chart2.Series[0].Points.DataBindXY(xValues.ToArray(), yValues);
             
             int i = 0;
             foreach (KeyValuePair<DateTime, double> pair in data)
             {
                 //chart2.Series[0].Points[i].LegendText = pair.Key.ToShortDateString();
-                categoryChart.Series[0].Points[i].ToolTip = pair.Key.ToShortDateString() +", " + pair.Value + Database.NIS_SIGN;
+                chart2.Series[0].Points[i].ToolTip = pair.Key.ToShortDateString() +", " + pair.Value + Database.NIS_SIGN;
                // DataPoint item = new DataPoint();
                 //item.ToolTip = pair.Key.ToShortDateString() +", " + pair.Value + Database.NIS_SIGN;
                 //item.LegendText = pair.Key.ToShortDateString();

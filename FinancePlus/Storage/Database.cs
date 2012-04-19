@@ -21,15 +21,8 @@ namespace FinancePlus.Storage
         public const string POALIM_STRING = "בנק הפועלים";
         public const string WARNING_STRING = "אזהרה";
         public const string ACCESS_FAILED_WARNING_MESSAGE = "הקובץ בשימוש על ידי תהליך אחר, לא ניתן לגשת לקובץ";
+
         /************************************ End of Constant Strings ************************************/
-
-
-        /************************************ Main Data Structures ************************************/
-        public static Dictionary<DateTime, Month> months = new Dictionary<DateTime, Month>();
-        public static HashSet<Category> categories = new HashSet<Category>();
-        public static Dictionary<string, Category> categoriesMap = new Dictionary<string, Category>();
-        public static HashSet<string> filterMap = new HashSet<string>();
-        /************************************ End of Main Data Structures ************************************/
 
 
         public static string dataFolder = "C:\\Users\\Itay\\Desktop\\דוחות אשראי\\";
@@ -38,6 +31,10 @@ namespace FinancePlus.Storage
         public static string dataCategoriesMapFilename = "CategoriesMapData.xml";
         public static string dataFilterMapFilename = "FilterMapData.xml";
 
+        public static Dictionary<DateTime, Month> months = new Dictionary<DateTime, Month>();
+        public static HashSet<Category> categories = new HashSet<Category>();
+        public static Dictionary<string, Category> categoriesMap = new Dictionary<string, Category>();
+        public static HashSet<string> filterMap = new HashSet<string>();
 
         public static DateTime stringDateToDateTime(string stringDate)
         {
