@@ -56,7 +56,7 @@ namespace FinancePlus
             // getting selected subitem's text
             //string total = "סה\"כ: " + "₪" + Database.getTotalBillingPrice(getSelectedMonth(), category);
 
-            string total = "סה\"כ: " + Database.getTotalBillingPrice(getSelectedFromMonthDateTime(), category) + Database.NIS_SIGN;
+            string total = Database.SUM + ": " + Database.getTotalBillingPrice(getSelectedFromMonthDateTime(), category) + Database.NIS_SIGN;
 
             ListViewGroup newGroup = new ListViewGroup(category.primary + ", " + category.secondary + ", " + total);
             newGroup.Tag = category;
@@ -474,19 +474,24 @@ namespace FinancePlus
             clearAllMonthsComp();
             updateColumns();
             updateMonthsCompRows();
-            updateMonthsChart();
+            updateMonthsExpensesChart();
+            updateMonthsIncomesExpenesChart();
+            updateMonthsSavings();
         }
 
         public void clearAllMonthsComp()
         {
             monthsCompListView.Columns.Clear();
             monthsCompListView.Items.Clear();
-            foreach (Series s in monthsChart.Series)
-            {
+            foreach (Series s in monthsExpensesChart.Series)
                 s.Points.Clear();
-                
-            }
-            monthsChart.Series.Clear();
+            monthsExpensesChart.Series.Clear();
+            foreach (Series s in monthsIncomesExpensesChart.Series)
+                s.Points.Clear();
+            monthsIncomesExpensesChart.Series.Clear();
+            foreach (Series s in savingsChart.Series)
+                s.Points.Clear();
+            savingsChart.Series.Clear();
         }
 
         public ColumnHeader addColumn(string name, string text, int width, object data)
@@ -577,17 +582,16 @@ namespace FinancePlus
             }
         }
 
-        private void updateMonthsChart()
+        private void updateMonthsExpensesChart()
         {
-
             foreach (ListViewGroup group in monthsCompListView.Groups)
             {
                 if (group.Header.ToString().StartsWith(Database.INCOME_STRING))
                     continue;
                 Series s = new Series();
                 s.ChartType = SeriesChartType.StackedColumn;
-                s.LegendText = group.Header;
-                monthsChart.Series.Add(s);
+                s.LegendText = group.Tag.ToString();
+                monthsExpensesChart.Series.Add(s);
                 
                 foreach (ColumnHeader col in monthsCompListView.Columns)
                 {
@@ -596,11 +600,95 @@ namespace FinancePlus
                     {
                         foreach (ListViewItem item in group.Items)
                             total += Double.Parse(item.SubItems[col.Index].Text);
-                        s.Points.AddXY(((DateTime)col.Tag).ToShortDateString(), total);
+                        DataPoint point = new DataPoint();
+                        point.SetValueXY(((DateTime)col.Tag).ToShortDateString(), total);
+                        point.ToolTip = group.Header + total.ToString("N", new CultureInfo("en-US")) + " " + Database.NIS_SIGN;
+                        s.Points.Add(point);
                     }
                     
                 }
               
+            }
+        }
+
+        private void updateMonthsIncomesExpenesChart()
+        {
+            Series incomesSeries = new Series();
+            incomesSeries.Color = Color.LimeGreen;
+            incomesSeries.LegendText = Database.INCOME_STRING;
+            monthsIncomesExpensesChart.Series.Add(incomesSeries);
+            
+            Series expensesSeries = new Series();
+            expensesSeries.Color = Color.Red;
+            expensesSeries.LegendText = Database.INCOME_STRING;
+            monthsIncomesExpensesChart.Series.Add(expensesSeries);
+           
+
+            foreach (ColumnHeader col in monthsCompListView.Columns)
+            {
+                if (col.Tag != null)
+                {
+                    double incomesTotal = 0;
+                    double expensesTotal = 0;
+                    foreach (ListViewGroup group in monthsCompListView.Groups)
+                    {
+                        double total = 0;
+                        foreach (ListViewItem item in group.Items)
+                            total += Double.Parse(item.SubItems[col.Index].Text);
+
+                        if (group.Header.ToString().StartsWith(Database.INCOME_STRING))
+                            incomesTotal += total;
+                        else
+                            expensesTotal += total;
+                    }
+
+                    DataPoint pIncomes = new DataPoint();
+                    pIncomes.SetValueXY(((DateTime)col.Tag).ToShortDateString(), incomesTotal);
+                    pIncomes.ToolTip = Database.INCOME_STRING + ":" + incomesTotal.ToString("N", new CultureInfo("en-US")) + " " + Database.NIS_SIGN;
+                    incomesSeries.Points.Add(pIncomes);
+
+                    DataPoint pExpenses = new DataPoint();
+                    pExpenses.SetValueXY(((DateTime)col.Tag).ToShortDateString(), expensesTotal);
+                    pExpenses.ToolTip = Database.EXPENSES_STRING + ":" + expensesTotal.ToString("N", new CultureInfo("en-US")) + " " + Database.NIS_SIGN;
+                    expensesSeries.Points.Add(pExpenses);
+                }
+            }
+        }
+
+        private void updateMonthsSavings()
+        {
+            Series savingsSeries = new Series();
+            savingsSeries.Color = Color.LimeGreen;
+            savingsSeries.LegendText = "יתרה";
+            savingsChart.Series.Add(savingsSeries);
+
+            foreach (ColumnHeader col in monthsCompListView.Columns)
+            {
+                if (col.Tag != null)
+                {
+                    double incomesTotal = 0;
+                    double expensesTotal = 0;
+                    foreach (ListViewGroup group in monthsCompListView.Groups)
+                    {
+                        double total = 0;
+                        foreach (ListViewItem item in group.Items)
+                            total += Double.Parse(item.SubItems[col.Index].Text);
+
+                        if (group.Header.ToString().StartsWith(Database.INCOME_STRING))
+                            incomesTotal += total;
+                        else
+                            expensesTotal += total;
+                    }
+
+                    double savings = incomesTotal - expensesTotal;
+                    DataPoint pSavings = new DataPoint();
+                    if (savings < 0)
+                        pSavings.Color = Color.Red;
+
+                    pSavings.SetValueXY(((DateTime)col.Tag).ToShortDateString(), savings);
+                    pSavings.ToolTip = "יתרה" + ":" + savings.ToString("N", new CultureInfo("en-US")) + " " + Database.NIS_SIGN;
+                    savingsSeries.Points.Add(pSavings);
+                }
             }
         }
 

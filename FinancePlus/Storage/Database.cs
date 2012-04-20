@@ -16,6 +16,7 @@ namespace FinancePlus.Storage
         public const string DEFAULT_PRIMARY_CATEGORY = "שונות";
         public const string DEFAULT_SECONDARY_CATEGORY = "אחר";
         public const string INCOME_STRING = "הכנסות";
+        public const string EXPENSES_STRING = "הוצאות";
         public const string OPEN_REPORT_STRING = "פתח דו\"ח ";
         public const string ISRACARD_STRING = "ישראכרט";
         public const string CAL_STRING = "כ.א.ל";
