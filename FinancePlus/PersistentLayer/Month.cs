@@ -10,13 +10,13 @@ namespace FinancePlus.PersistentLayer
     {
         // Fields
         private HashSet<Transaction> transactions;
-        //public HashSet<Income> incomes;
+        public HashSet<PaymentInfo> paymentsInfoList;
 
         // Constructor
         public Month()
         {
             this.transactions = new HashSet<Transaction>();
-            //this.incomes = new HashSet<Income>();
+            this.paymentsInfoList = new HashSet<PaymentInfo>();
         }
 
         public HashSet<Transaction>  getExpenses()
@@ -84,6 +84,18 @@ namespace FinancePlus.PersistentLayer
         public HashSet<Transaction> getTransactions()
         {
             return this.transactions;
+        }
+
+        public PaymentInfo getPaymentInfo(string paymentId,PaymentType paymentType,DateTime startDate,DateTime endDate)
+        {
+            PaymentInfo paymentInfo = new PaymentInfo(paymentId, paymentType, startDate, endDate);
+
+            foreach (PaymentInfo p in this.paymentsInfoList)
+                if (p.Equals(paymentInfo))
+                    return p;
+
+            this.paymentsInfoList.Add(paymentInfo);
+            return paymentInfo;
         }
     }
 }

@@ -21,6 +21,8 @@ namespace FinancePlus.Storage
         public const string ISRACARD_STRING = "ישראכרט";
         public const string CAL_STRING = "כ.א.ל";
         public const string POALIM_STRING = "בנק הפועלים";
+        public const string ACCOUNT_NUMBER = "מספר חשבון";
+        public const string CARD_NUMBER = "כרטיס מספר";
         public const string WARNING_STRING = "אזהרה";
         public const string ACCESS_FAILED_WARNING_MESSAGE = "הקובץ בשימוש על ידי תהליך אחר, לא ניתן לגשת לקובץ";
         /************************************ End of Constant Strings ************************************/
@@ -391,7 +393,7 @@ namespace FinancePlus.Storage
                                                         DateTime startDate = stringDateToDateTime(startDateString);
                                                         DateTime endDate = stringDateToDateTime(endDateString);
                                                         PaymentType paymentType = PaymentInfo.parsePaymentTypeString(paymentTypeString);
-                                                        e.paymentInfo = new PaymentInfo(paymentId,paymentType,startDate,endDate);
+                                                        e.paymentInfo = month.getPaymentInfo(paymentId,paymentType,startDate,endDate);
                                                         break;
                                                     }
                                                 }

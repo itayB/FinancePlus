@@ -117,6 +117,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.monthsIncomesExpensesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.savingsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.sizeLabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expensesChart)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -868,12 +869,22 @@
             this.savingsChart.TabIndex = 15;
             this.savingsChart.Text = "chart2";
             // 
+            // sizeLabel
+            // 
+            this.sizeLabel.AutoSize = true;
+            this.sizeLabel.Location = new System.Drawing.Point(511, 36);
+            this.sizeLabel.Name = "sizeLabel";
+            this.sizeLabel.Size = new System.Drawing.Size(35, 13);
+            this.sizeLabel.TabIndex = 21;
+            this.sizeLabel.Text = "label1";
+            // 
             // MonthForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 706);
             this.Controls.Add(this.tillMonthlabel);
+            this.Controls.Add(this.sizeLabel);
             this.Controls.Add(this.tillMonthComboBox);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl);
@@ -981,6 +992,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataVisualization.Charting.Chart monthsIncomesExpensesChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart savingsChart;
+        private System.Windows.Forms.Label sizeLabel;
 
 
     }

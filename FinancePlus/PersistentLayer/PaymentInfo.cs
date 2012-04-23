@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FinancePlus.Storage;
 
 namespace FinancePlus.PersistentLayer
 {
@@ -80,6 +81,45 @@ namespace FinancePlus.PersistentLayer
                     this.paymentType = PaymentType.Cal;
                     break;
             }
+        }
+
+        public override bool Equals(Object o)
+        {
+            try
+            {
+                if (o == null || GetType() != o.GetType()) 
+                    return false;
+
+                // If parameter cannot be cast to PaymentInfo return false.
+                PaymentInfo other = (PaymentInfo)o;
+                if ((System.Object)other == null)
+                {
+                    return false;
+                }
+
+                return this.paymentId.Equals(other.paymentId) &&
+                       this.paymentType.Equals(other.paymentType) &&
+                       this.startDate.Equals(other.startDate) &&
+                       this.endDate.Equals(other.endDate);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public override string ToString()
+        {
+            string str = "";
+            if (this.paymentType.Equals(PaymentType.Poalim))
+                str += Database.POALIM_STRING + ": " + Database.ACCOUNT_NUMBER + ":" + this.paymentId;
+            else if (this.paymentType.Equals(PaymentType.Cal))
+                str += Database.CAL_STRING + ": " + Database.CARD_NUMBER + ":" + this.paymentId;
+            else if (this.paymentType.Equals(PaymentType.Isracard))
+                str += Database.ISRACARD_STRING + ": " + Database.CARD_NUMBER + ":" + this.paymentId;
+
+            str += " ת. התחלה:" + this.startDate.ToShortDateString() + " ת. סיום:" + this.endDate.ToShortDateString();
+            return str;
         }
     }
 }

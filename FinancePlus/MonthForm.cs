@@ -295,8 +295,21 @@ namespace FinancePlus
 
         }
 
+        private void updatePaymentsInfoStatus()
+        {
+            string str = "";
+            Month m = getSelectedMonth();
+            foreach (PaymentInfo p in m.paymentsInfoList)
+                str += p.ToString() + "\n";
+
+            sizeLabel.Text = str;
+
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            updatePaymentsInfoStatus();
+
             if (this.tabControl.SelectedTab.Equals(this.monthTabPage))
                 updateMonthData();
             else if (this.tabControl.SelectedTab.Equals(this.monthsCompTabPage))
