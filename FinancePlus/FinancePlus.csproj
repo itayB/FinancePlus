@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="GUILayer\ListViewGroupHeaderSorter.cs" />
     <Compile Include="GUILayer\ListViewGroupSorter.cs" />
+    <Compile Include="PersistentLayer\BankAccount.cs" />
     <Compile Include="PersistentLayer\Category.cs" />
     <Compile Include="PersistentLayer\CreditCard.cs" />
     <Compile Include="PersistentLayer\Income.cs" />

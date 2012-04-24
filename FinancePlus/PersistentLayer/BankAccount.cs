@@ -5,14 +5,15 @@ using System.Text;
 
 namespace FinancePlus.PersistentLayer
 {
-    class CreditCard
+    class BankAccount
     {
         // Fields
-        string lastFourDigits;
+        string accountNumber;    /* 6 digits */
+        string bankBranchNumber; /* 3 digits */
+        string bankNumber;       /* 2 digits */
         DateTime validFromDate;
         DateTime expiryDate;
         string description;
         string owner;
-        BankAccount bank;
     }
 }
