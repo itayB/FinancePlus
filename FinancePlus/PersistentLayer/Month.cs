@@ -85,6 +85,8 @@ namespace FinancePlus.PersistentLayer
         public void addTransaction(Transaction t)
         {
             transactions.Add(t);
+            if (!paymentsInfoList.Contains(t.paymentInfo))
+                paymentsInfoList.Add(t.paymentInfo);
         }
 
         public List<Transaction> getTransactions()

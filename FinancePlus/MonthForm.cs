@@ -110,6 +110,8 @@ namespace FinancePlus
         public void updateMonthData()
         {
             clearAll();
+            foreach (KeyValuePair<DateTime, Month> pair in Database.months)
+                pair.Value.sortTransactions();
             updateIncomeListView();
             updateTotalIncomes();
             updateExpensesListView();
