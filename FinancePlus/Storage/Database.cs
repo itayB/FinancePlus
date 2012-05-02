@@ -313,6 +313,7 @@ namespace FinancePlus.Storage
                             }
                             else
                             {
+                                month.sortTransactions();
                                 Database.months.Add(date, month);
                             }
                             break;

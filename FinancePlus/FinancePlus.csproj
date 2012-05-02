@@ -78,6 +78,7 @@
     <Compile Include="PersistentLayer\CreditCard.cs" />
     <Compile Include="PersistentLayer\Income.cs" />
     <Compile Include="PersistentLayer\PaymentInfo.cs" />
+    <Compile Include="PersistentLayer\TransactionsSorter.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>

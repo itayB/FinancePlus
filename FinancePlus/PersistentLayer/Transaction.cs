@@ -45,6 +45,8 @@ namespace FinancePlus.PersistentLayer
                 if (numbers.Count() == 3)
                     paymentNum = int.Parse(numbers[1]) - 1;
             }
+            else
+                return this.date;
 
             return new DateTime(this.date.Year, this.date.Month, this.date.Day).AddMonths(paymentNum);
         }

@@ -9,14 +9,20 @@ namespace FinancePlus.PersistentLayer
     public class Month
     {
         // Fields
-        private HashSet<Transaction> transactions;
+        private List<Transaction> transactions;
         public HashSet<PaymentInfo> paymentsInfoList;
+
 
         // Constructor
         public Month()
         {
-            this.transactions = new HashSet<Transaction>();
+            this.transactions = new List<Transaction>();
             this.paymentsInfoList = new HashSet<PaymentInfo>();
+        }
+
+        public void sortTransactions()
+        {
+            this.transactions.Sort(new TransactionsSorter());
         }
 
         public HashSet<Transaction>  getExpenses()
@@ -81,7 +87,7 @@ namespace FinancePlus.PersistentLayer
             transactions.Add(t);
         }
 
-        public HashSet<Transaction> getTransactions()
+        public List<Transaction> getTransactions()
         {
             return this.transactions;
         }

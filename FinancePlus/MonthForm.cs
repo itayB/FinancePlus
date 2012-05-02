@@ -201,7 +201,7 @@ namespace FinancePlus
                 if (e.filtered())
                     continue;
 
-                ListViewItem lvi = new ListViewItem(e.date.ToShortDateString());
+                ListViewItem lvi = new ListViewItem(e.getChargeDate().ToShortDateString());
                 lvi.SubItems.Add(e.businessName);
                 lvi.SubItems.Add(e.transactionPrice.ToString());
                 lvi.SubItems.Add(e.billingPrice.ToString());
@@ -758,11 +758,16 @@ namespace FinancePlus
 
         public void updatePrimaryCategoryComboBox()
         {
+            List<string> items = new List<string>();
+
             foreach (Category c in Database.categories)
             {
-                if (!primaryCategoryComboBox.Items.Contains(c.primary))
-                    primaryCategoryComboBox.Items.Add(c.primary);
+                if (!items.Contains(c.primary))
+                    items.Add(c.primary);
             }
+
+            items.Sort();
+            primaryCategoryComboBox.Items.AddRange(items.ToArray());
         }
 
         private void primaryCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -771,11 +776,15 @@ namespace FinancePlus
 
             secondaryCategoryComboBox.Items.Clear();
 
+            List<string> items = new List<string>();
             foreach (Category c in Database.categories)
             {
                 if (c.primary.Equals(primary))
-                    secondaryCategoryComboBox.Items.Add(c.secondary);
+                    items.Add(c.secondary);
             }
+
+            items.Sort();
+            secondaryCategoryComboBox.Items.AddRange(items.ToArray());
         }
 
         private void secondaryCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -809,7 +818,7 @@ namespace FinancePlus
                             !Database.getCategory(e).secondary.Equals(secondaryCategoryComboBox.Text))
                             continue;
 
-                        ListViewItem lvi = new ListViewItem(e.date.ToShortDateString());
+                        ListViewItem lvi = new ListViewItem(e.getChargeDate().ToShortDateString());
                         lvi.SubItems.Add(e.businessName);
                         lvi.SubItems.Add(e.transactionPrice.ToString());
                         lvi.SubItems.Add(e.billingPrice.ToString());
