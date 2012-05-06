@@ -33,8 +33,8 @@ namespace FinancePlus.Storage
         public static HashSet<Category> categories = new HashSet<Category>();
         public static Dictionary<string, Category> categoriesMap = new Dictionary<string, Category>();
         public static HashSet<string> filterMap = new HashSet<string>();
-        public static HashSet<CreditCard> creditCardsList = new HashSet<CreditCard>();
-        public static HashSet<BankAccount> bankAccounts = new HashSet<BankAccount>();
+        public static List<CreditCard> creditCardsList = new List<CreditCard>();
+        public static List<BankAccount> bankAccounts = new List<BankAccount>();
         /************************************ End of Main Data Structures ************************************/
 
 
@@ -43,7 +43,7 @@ namespace FinancePlus.Storage
         public static string dataTransactionsFilenameBackup = "TransactionsDataBackup.xml";
         public static string dataCategoriesMapFilename = "CategoriesMapData.xml";
         public static string dataFilterMapFilename = "FilterMapData.xml";
-
+        public static string dataReportsFilename = "ReportsData.xml";
 
         public static DateTime stringDateToDateTime(string stringDate)
         {
@@ -164,6 +164,7 @@ namespace FinancePlus.Storage
             loadTransactions();
             loadCategoriesMap();
             loadFilterMap();
+            DataHandler.loadReports();
         }
 
         public static void save()
@@ -177,6 +178,7 @@ namespace FinancePlus.Storage
             saveTransactionsToXML();
             saveCategoriesMapToXML();
             saveFilterMapToXML();
+            DataHandler.saveReportsToXML();
         }
 
         public static void saveTransactionsToXML()

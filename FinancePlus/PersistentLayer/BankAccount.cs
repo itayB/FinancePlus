@@ -8,12 +8,14 @@ namespace FinancePlus.PersistentLayer
     class BankAccount
     {
         // Fields
-        string accountNumber;    /* 6 digits */
-        string bankBranchNumber; /* 3 digits */
-        string bankNumber;       /* 2 digits */
-        DateTime validFromDate;
-        DateTime expiryDate;
-        string description;
-        string owner;
+        public string accountNumber;    /* 6 digits */
+        public string branchNumber;     /* 3 digits */
+        public string bankNumber;       /* 2 digits */
+        public string bankName;
+        public string branchName;
+        public string owner;
+        //public DateTime validFromDate;
+        //public DateTime expiryDate;
+        //public string description;
     }
 }

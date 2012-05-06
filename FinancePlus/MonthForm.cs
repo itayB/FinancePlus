@@ -480,6 +480,8 @@ namespace FinancePlus
                 updateMonthData();
             else if (this.tabControl.SelectedTab.Equals(this.categoryCompTabPage))
                 updateCategoryCompData();
+            else if (this.tabControl.SelectedTab.Equals(this.reportsTabPage))
+                updateReportsData();
         }
 
         /************************************************** Months Compare **************************************************/
@@ -939,6 +941,8 @@ namespace FinancePlus
             //chart1.Series[0].Points[2].LegendText = "תקשורת";
             //chart1.Series[0].Points[3].LegendText = "תחבורה";
         }
-        /**************************************************  **************************************************/
+        /************************************************** Bank & Credit-Cards reports **************************************************/
+
+
     }
 }

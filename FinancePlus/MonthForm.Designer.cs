@@ -36,15 +36,15 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.expenseslistView = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -93,7 +93,13 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.monthTabPage = new System.Windows.Forms.TabPage();
             this.monthsCompTabPage = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.monthsExpensesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.monthsIncomesExpensesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.savingsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.monthsCompListView = new System.Windows.Forms.ListView();
             this.categoryCompTabPage = new System.Windows.Forms.TabPage();
             this.categoryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -111,28 +117,50 @@
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tillMonthlabel = new System.Windows.Forms.Label();
             this.tillMonthComboBox = new System.Windows.Forms.ComboBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.monthsIncomesExpensesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.savingsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.sizeLabel = new System.Windows.Forms.Label();
+            this.reportsTabPage = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.creditCardsListView = new System.Windows.Forms.ListView();
+            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bankAccountsListView = new System.Windows.Forms.ListView();
+            this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView4 = new System.Windows.Forms.ListView();
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expensesChart)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.monthTabPage.SuspendLayout();
             this.monthsCompTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monthsExpensesChart)).BeginInit();
-            this.categoryCompTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryChart)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monthsExpensesChart)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monthsIncomesExpensesChart)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.savingsChart)).BeginInit();
+            this.categoryCompTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryChart)).BeginInit();
+            this.reportsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // expenseslistView
@@ -521,6 +549,7 @@
             this.tabControl.Controls.Add(this.monthTabPage);
             this.tabControl.Controls.Add(this.monthsCompTabPage);
             this.tabControl.Controls.Add(this.categoryCompTabPage);
+            this.tabControl.Controls.Add(this.reportsTabPage);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl.Location = new System.Drawing.Point(0, 64);
             this.tabControl.Name = "tabControl";
@@ -566,6 +595,31 @@
             this.monthsCompTabPage.Text = "השוואה בין חודשים";
             this.monthsCompTabPage.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(123, 346);
+            this.tabControl1.Multiline = true;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeftLayout = true;
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1087, 267);
+            this.tabControl1.TabIndex = 14;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.monthsExpensesChart);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1079, 238);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "הוצאות";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // monthsExpensesChart
             // 
             this.monthsExpensesChart.BackColor = System.Drawing.Color.Transparent;
@@ -594,6 +648,86 @@
             this.monthsExpensesChart.Size = new System.Drawing.Size(1070, 236);
             this.monthsExpensesChart.TabIndex = 13;
             this.monthsExpensesChart.Text = "chart2";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.monthsIncomesExpensesChart);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1079, 238);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "הכנסות/הוצאות";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // monthsIncomesExpensesChart
+            // 
+            this.monthsIncomesExpensesChart.BackColor = System.Drawing.Color.Transparent;
+            this.monthsIncomesExpensesChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.monthsIncomesExpensesChart.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.monthsIncomesExpensesChart.BorderlineColor = System.Drawing.Color.Transparent;
+            this.monthsIncomesExpensesChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.monthsIncomesExpensesChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
+            chartArea3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
+            chartArea3.Name = "ChartArea1";
+            this.monthsIncomesExpensesChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.monthsIncomesExpensesChart.Legends.Add(legend3);
+            this.monthsIncomesExpensesChart.Location = new System.Drawing.Point(4, 1);
+            this.monthsIncomesExpensesChart.Name = "monthsIncomesExpensesChart";
+            series3.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series3.BorderColor = System.Drawing.Color.Transparent;
+            series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.DodgerBlue;
+            series3.IsValueShownAsLabel = true;
+            series3.IsVisibleInLegend = false;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.ShadowColor = System.Drawing.Color.Transparent;
+            this.monthsIncomesExpensesChart.Series.Add(series3);
+            this.monthsIncomesExpensesChart.Size = new System.Drawing.Size(1070, 236);
+            this.monthsIncomesExpensesChart.TabIndex = 14;
+            this.monthsIncomesExpensesChart.Text = "chart2";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.savingsChart);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1079, 238);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "חסכונות";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // savingsChart
+            // 
+            this.savingsChart.BackColor = System.Drawing.Color.Transparent;
+            this.savingsChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.savingsChart.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.savingsChart.BorderlineColor = System.Drawing.Color.Transparent;
+            this.savingsChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.savingsChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
+            chartArea4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
+            chartArea4.Name = "ChartArea1";
+            this.savingsChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.savingsChart.Legends.Add(legend4);
+            this.savingsChart.Location = new System.Drawing.Point(4, 1);
+            this.savingsChart.Name = "savingsChart";
+            series4.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series4.BorderColor = System.Drawing.Color.Transparent;
+            series4.ChartArea = "ChartArea1";
+            series4.Color = System.Drawing.Color.DodgerBlue;
+            series4.IsValueShownAsLabel = true;
+            series4.IsVisibleInLegend = false;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            series4.ShadowColor = System.Drawing.Color.Transparent;
+            this.savingsChart.Series.Add(series4);
+            this.savingsChart.Size = new System.Drawing.Size(1070, 236);
+            this.savingsChart.TabIndex = 15;
+            this.savingsChart.Text = "chart2";
             // 
             // monthsCompListView
             // 
@@ -764,111 +898,6 @@
             this.tillMonthComboBox.Visible = false;
             this.tillMonthComboBox.SelectedIndexChanged += new System.EventHandler(this.tillMonthComboBox_SelectedIndexChanged);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(123, 346);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.RightToLeftLayout = true;
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1087, 267);
-            this.tabControl1.TabIndex = 14;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.monthsExpensesChart);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1079, 238);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "הוצאות";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.monthsIncomesExpensesChart);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1079, 238);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "הכנסות/הוצאות";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.savingsChart);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1079, 238);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "חסכונות";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // monthsIncomesExpensesChart
-            // 
-            this.monthsIncomesExpensesChart.BackColor = System.Drawing.Color.Transparent;
-            this.monthsIncomesExpensesChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.monthsIncomesExpensesChart.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.monthsIncomesExpensesChart.BorderlineColor = System.Drawing.Color.Transparent;
-            this.monthsIncomesExpensesChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.monthsIncomesExpensesChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
-            chartArea3.Name = "ChartArea1";
-            this.monthsIncomesExpensesChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.monthsIncomesExpensesChart.Legends.Add(legend3);
-            this.monthsIncomesExpensesChart.Location = new System.Drawing.Point(4, 1);
-            this.monthsIncomesExpensesChart.Name = "monthsIncomesExpensesChart";
-            series3.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series3.BorderColor = System.Drawing.Color.Transparent;
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.DodgerBlue;
-            series3.IsValueShownAsLabel = true;
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.ShadowColor = System.Drawing.Color.Transparent;
-            this.monthsIncomesExpensesChart.Series.Add(series3);
-            this.monthsIncomesExpensesChart.Size = new System.Drawing.Size(1070, 236);
-            this.monthsIncomesExpensesChart.TabIndex = 14;
-            this.monthsIncomesExpensesChart.Text = "chart2";
-            // 
-            // savingsChart
-            // 
-            this.savingsChart.BackColor = System.Drawing.Color.Transparent;
-            this.savingsChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.savingsChart.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.savingsChart.BorderlineColor = System.Drawing.Color.Transparent;
-            this.savingsChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.savingsChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDot;
-            chartArea4.Name = "ChartArea1";
-            this.savingsChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.savingsChart.Legends.Add(legend4);
-            this.savingsChart.Location = new System.Drawing.Point(4, 1);
-            this.savingsChart.Name = "savingsChart";
-            series4.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series4.BorderColor = System.Drawing.Color.Transparent;
-            series4.ChartArea = "ChartArea1";
-            series4.Color = System.Drawing.Color.DodgerBlue;
-            series4.IsValueShownAsLabel = true;
-            series4.IsVisibleInLegend = false;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.ShadowColor = System.Drawing.Color.Transparent;
-            this.savingsChart.Series.Add(series4);
-            this.savingsChart.Size = new System.Drawing.Size(1070, 236);
-            this.savingsChart.TabIndex = 15;
-            this.savingsChart.Text = "chart2";
-            // 
             // sizeLabel
             // 
             this.sizeLabel.AutoSize = true;
@@ -877,6 +906,200 @@
             this.sizeLabel.Size = new System.Drawing.Size(35, 13);
             this.sizeLabel.TabIndex = 21;
             this.sizeLabel.Text = "label1";
+            // 
+            // reportsTabPage
+            // 
+            this.reportsTabPage.Controls.Add(this.listView4);
+            this.reportsTabPage.Controls.Add(this.bankAccountsListView);
+            this.reportsTabPage.Controls.Add(this.creditCardsListView);
+            this.reportsTabPage.Controls.Add(this.listView1);
+            this.reportsTabPage.Location = new System.Drawing.Point(4, 25);
+            this.reportsTabPage.Name = "reportsTabPage";
+            this.reportsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.reportsTabPage.Size = new System.Drawing.Size(1224, 613);
+            this.reportsTabPage.TabIndex = 3;
+            this.reportsTabPage.Text = "ריכוז דוחות כ. אשראי";
+            this.reportsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader29,
+            this.columnHeader31,
+            this.columnHeader32,
+            this.columnHeader45,
+            this.columnHeader35});
+            this.listView1.FullRowSelect = true;
+            this.listView1.Location = new System.Drawing.Point(170, 238);
+            this.listView1.Name = "listView1";
+            this.listView1.RightToLeftLayout = true;
+            this.listView1.Size = new System.Drawing.Size(433, 258);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader29
+            // 
+            this.columnHeader29.Text = "חודש";
+            this.columnHeader29.Width = 58;
+            // 
+            // columnHeader31
+            // 
+            this.columnHeader31.Text = "מספר כרטיס";
+            this.columnHeader31.Width = 74;
+            // 
+            // columnHeader32
+            // 
+            this.columnHeader32.Text = "שם הכרטיס";
+            this.columnHeader32.Width = 120;
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "סה\"כ לתשלום";
+            this.columnHeader35.Width = 89;
+            // 
+            // creditCardsListView
+            // 
+            this.creditCardsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader36,
+            this.columnHeader39,
+            this.columnHeader40,
+            this.columnHeader41,
+            this.columnHeader42,
+            this.columnHeader43});
+            this.creditCardsListView.FullRowSelect = true;
+            this.creditCardsListView.Location = new System.Drawing.Point(70, 51);
+            this.creditCardsListView.Name = "creditCardsListView";
+            this.creditCardsListView.RightToLeftLayout = true;
+            this.creditCardsListView.Size = new System.Drawing.Size(533, 118);
+            this.creditCardsListView.TabIndex = 2;
+            this.creditCardsListView.UseCompatibleStateImageBehavior = false;
+            this.creditCardsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader36
+            // 
+            this.columnHeader36.Text = "מספר כרטיס";
+            this.columnHeader36.Width = 74;
+            // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "שם הכרטיס";
+            this.columnHeader39.Width = 120;
+            // 
+            // columnHeader40
+            // 
+            this.columnHeader40.Text = "שם בעל הכרטיס";
+            this.columnHeader40.Width = 95;
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "תוקף";
+            this.columnHeader41.Width = 77;
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Text = "יום החיוב";
+            this.columnHeader42.Width = 73;
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Text = "חשבון בנק";
+            this.columnHeader43.Width = 73;
+            // 
+            // bankAccountsListView
+            // 
+            this.bankAccountsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader30,
+            this.columnHeader33,
+            this.columnHeader34,
+            this.columnHeader37,
+            this.columnHeader38,
+            this.columnHeader44});
+            this.bankAccountsListView.FullRowSelect = true;
+            this.bankAccountsListView.Location = new System.Drawing.Point(718, 51);
+            this.bankAccountsListView.Name = "bankAccountsListView";
+            this.bankAccountsListView.RightToLeftLayout = true;
+            this.bankAccountsListView.Size = new System.Drawing.Size(492, 118);
+            this.bankAccountsListView.TabIndex = 3;
+            this.bankAccountsListView.UseCompatibleStateImageBehavior = false;
+            this.bankAccountsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "מספר חשבון";
+            this.columnHeader30.Width = 77;
+            // 
+            // columnHeader33
+            // 
+            this.columnHeader33.Text = "מס\' סניף";
+            this.columnHeader33.Width = 56;
+            // 
+            // columnHeader34
+            // 
+            this.columnHeader34.Text = "מס\' בנק";
+            this.columnHeader34.Width = 51;
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "שם הבנק";
+            this.columnHeader37.Width = 95;
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "שם הסניף";
+            this.columnHeader38.Width = 98;
+            // 
+            // columnHeader44
+            // 
+            this.columnHeader44.Text = "שם בעל החשבון";
+            this.columnHeader44.Width = 95;
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "מס\' עסקאות";
+            this.columnHeader45.Width = 74;
+            // 
+            // listView4
+            // 
+            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader46,
+            this.columnHeader47,
+            this.columnHeader49,
+            this.columnHeader50,
+            this.columnHeader51});
+            this.listView4.FullRowSelect = true;
+            this.listView4.Location = new System.Drawing.Point(811, 238);
+            this.listView4.Name = "listView4";
+            this.listView4.RightToLeftLayout = true;
+            this.listView4.Size = new System.Drawing.Size(399, 258);
+            this.listView4.TabIndex = 4;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader46
+            // 
+            this.columnHeader46.Text = "חודש";
+            this.columnHeader46.Width = 58;
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "מספר חשבון";
+            this.columnHeader47.Width = 89;
+            // 
+            // columnHeader49
+            // 
+            this.columnHeader49.Text = "מס\' פעולות";
+            this.columnHeader49.Width = 74;
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Text = "סה\"כ זכות";
+            this.columnHeader50.Width = 89;
+            // 
+            // columnHeader51
+            // 
+            this.columnHeader51.Text = "סה\"כ חובה";
+            this.columnHeader51.Width = 74;
             // 
             // MonthForm
             // 
@@ -903,16 +1126,17 @@
             this.monthTabPage.ResumeLayout(false);
             this.monthTabPage.PerformLayout();
             this.monthsCompTabPage.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.monthsExpensesChart)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.monthsIncomesExpensesChart)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.savingsChart)).EndInit();
             this.categoryCompTabPage.ResumeLayout(false);
             this.categoryCompTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryChart)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.monthsIncomesExpensesChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.savingsChart)).EndInit();
+            this.reportsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -993,6 +1217,33 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart monthsIncomesExpensesChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart savingsChart;
         private System.Windows.Forms.Label sizeLabel;
+        private System.Windows.Forms.TabPage reportsTabPage;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader29;
+        private System.Windows.Forms.ColumnHeader columnHeader31;
+        private System.Windows.Forms.ColumnHeader columnHeader32;
+        private System.Windows.Forms.ColumnHeader columnHeader35;
+        private System.Windows.Forms.ListView creditCardsListView;
+        private System.Windows.Forms.ColumnHeader columnHeader36;
+        private System.Windows.Forms.ColumnHeader columnHeader39;
+        private System.Windows.Forms.ColumnHeader columnHeader40;
+        private System.Windows.Forms.ColumnHeader columnHeader41;
+        private System.Windows.Forms.ColumnHeader columnHeader42;
+        private System.Windows.Forms.ColumnHeader columnHeader43;
+        private System.Windows.Forms.ListView bankAccountsListView;
+        private System.Windows.Forms.ColumnHeader columnHeader30;
+        private System.Windows.Forms.ColumnHeader columnHeader33;
+        private System.Windows.Forms.ColumnHeader columnHeader34;
+        private System.Windows.Forms.ColumnHeader columnHeader37;
+        private System.Windows.Forms.ColumnHeader columnHeader38;
+        private System.Windows.Forms.ColumnHeader columnHeader44;
+        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.ColumnHeader columnHeader46;
+        private System.Windows.Forms.ColumnHeader columnHeader47;
+        private System.Windows.Forms.ColumnHeader columnHeader49;
+        private System.Windows.Forms.ColumnHeader columnHeader50;
+        private System.Windows.Forms.ColumnHeader columnHeader51;
+        private System.Windows.Forms.ColumnHeader columnHeader45;
 
 
     }

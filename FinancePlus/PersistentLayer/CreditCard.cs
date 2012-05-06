@@ -8,11 +8,11 @@ namespace FinancePlus.PersistentLayer
     class CreditCard
     {
         // Fields
-        string lastFourDigits;
-        DateTime validFromDate;
-        DateTime expiryDate;
-        string description;
-        string owner;
-        BankAccount bank;
+        public string lastFourDigits;
+        //public DateTime validFromDate;
+        public DateTime expiryDate; // the day represents the charge day of the month
+        public string description;
+        public string owner;
+        public BankAccount bank;
     }
 }
