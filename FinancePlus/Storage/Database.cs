@@ -35,6 +35,7 @@ namespace FinancePlus.Storage
         public static HashSet<string> filterMap = new HashSet<string>();
         public static List<CreditCard> creditCardsList = new List<CreditCard>();
         public static List<BankAccount> bankAccounts = new List<BankAccount>();
+        public static List<CreditCardReport> creditCardReportsList = new List<CreditCardReport>();
         /************************************ End of Main Data Structures ************************************/
 
 

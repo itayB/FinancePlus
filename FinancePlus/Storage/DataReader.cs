@@ -73,14 +73,17 @@ namespace FinancePlus.PersistentLayer
             return sr;
         }
 
-        public static void readFile(StreamReader sr, PaymentType paymentType,string filename)
+        public static void readFile(StreamReader sr, PaymentType paymentType, string filename)
         {
             KeyValuePair<DateTime, ArrayList> pair = new KeyValuePair<DateTime, ArrayList>();
+            CreditCardReport cardData = null;
+            ArrayList expenses = null;
 
             switch (paymentType)
             {
                 case PaymentType.Isracard:
-                    pair = IsracardReader.read(sr,filename);
+                    //pair = IsracardReader.read(sr,filename);
+                    cardData = IsracardReader.read(sr, filename);
                     break;
                 case PaymentType.Cal:
                     pair = CalReader.read(sr);
@@ -90,20 +93,59 @@ namespace FinancePlus.PersistentLayer
                     break;
             }
 
-            ArrayList expenses = pair.Value;
+            if (cardData == null)
+                expenses = pair.Value;
+            else
+                expenses = cardData.transactions;
 
             foreach (Transaction e in expenses)
             {
                 DateTime date = pair.Key;
                 //if (i != 2) // not relevant to bank hapoalim 
-                date = mapExpenseAndBillingMonthToDate(e, date);
+                date = mapExpenseAndBillingMonthToDate(e);
                 Month month = Database.getMonth(date);
                 month.addTransaction(e);
             }
         }
 
+        public static CreditCardReport readCreditCardReportFile(StreamReader sr, PaymentType paymentType, string filename)
+        {
+            KeyValuePair<DateTime, ArrayList> pair = new KeyValuePair<DateTime, ArrayList>();
+            CreditCardReport cardData = null;
+            ArrayList expenses = null;
 
-        private static DateTime mapExpenseAndBillingMonthToDate(Transaction expense, DateTime billDate)
+            switch (paymentType)
+            {
+                case PaymentType.Isracard:
+                    //pair = IsracardReader.read(sr,filename);
+                    cardData = IsracardReader.read(sr, filename);
+                    break;
+                case PaymentType.Cal:
+                    pair = CalReader.read(sr);
+                    break;
+                default:
+                    return null;
+            }
+
+            if (cardData == null)
+                expenses = pair.Value;
+            else
+                expenses = cardData.transactions;
+
+            foreach (Transaction e in expenses)
+            {
+                DateTime date = pair.Key;
+                //if (i != 2) // not relevant to bank hapoalim 
+                date = mapExpenseAndBillingMonthToDate(e);
+                Month month = Database.getMonth(date);
+                month.addTransaction(e);
+            }
+
+            return cardData;
+        }
+
+
+        private static DateTime mapExpenseAndBillingMonthToDate(Transaction expense)
         {
             int paymentNum = 0;
             if (expense.details != null && expense.details.StartsWith("תשלום"))

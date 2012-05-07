@@ -119,7 +119,7 @@
             this.tillMonthComboBox = new System.Windows.Forms.ComboBox();
             this.sizeLabel = new System.Windows.Forms.Label();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.creditCardReportsListView = new System.Windows.Forms.ListView();
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -912,7 +912,7 @@
             this.reportsTabPage.Controls.Add(this.listView4);
             this.reportsTabPage.Controls.Add(this.bankAccountsListView);
             this.reportsTabPage.Controls.Add(this.creditCardsListView);
-            this.reportsTabPage.Controls.Add(this.listView1);
+            this.reportsTabPage.Controls.Add(this.creditCardReportsListView);
             this.reportsTabPage.Location = new System.Drawing.Point(4, 25);
             this.reportsTabPage.Name = "reportsTabPage";
             this.reportsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -921,22 +921,22 @@
             this.reportsTabPage.Text = "ריכוז דוחות כ. אשראי";
             this.reportsTabPage.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // creditCardReportsListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.creditCardReportsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader29,
             this.columnHeader31,
             this.columnHeader32,
             this.columnHeader45,
             this.columnHeader35});
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(170, 238);
-            this.listView1.Name = "listView1";
-            this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(433, 258);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.creditCardReportsListView.FullRowSelect = true;
+            this.creditCardReportsListView.Location = new System.Drawing.Point(170, 238);
+            this.creditCardReportsListView.Name = "creditCardReportsListView";
+            this.creditCardReportsListView.RightToLeftLayout = true;
+            this.creditCardReportsListView.Size = new System.Drawing.Size(433, 258);
+            this.creditCardReportsListView.TabIndex = 1;
+            this.creditCardReportsListView.UseCompatibleStateImageBehavior = false;
+            this.creditCardReportsListView.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader29
             // 
@@ -1218,7 +1218,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart savingsChart;
         private System.Windows.Forms.Label sizeLabel;
         private System.Windows.Forms.TabPage reportsTabPage;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView creditCardReportsListView;
         private System.Windows.Forms.ColumnHeader columnHeader29;
         private System.Windows.Forms.ColumnHeader columnHeader31;
         private System.Windows.Forms.ColumnHeader columnHeader32;

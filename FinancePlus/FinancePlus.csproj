@@ -59,6 +59,12 @@
     <Compile Include="CommentForm.Designer.cs">
       <DependentUpon>CommentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreditCardChooserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditCardChooserForm.Designer.cs">
+      <DependentUpon>CreditCardChooserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FilterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,7 @@
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Storage\CalReader.cs" />
+    <Compile Include="PersistentLayer\CreditCardReport.cs" />
     <Compile Include="Storage\DataHandler.cs" />
     <Compile Include="Storage\DataReader.cs" />
     <Compile Include="PersistentLayer\Transaction.cs" />
@@ -108,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommentForm.resx">
       <DependentUpon>CommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditCardChooserForm.resx">
+      <DependentUpon>CreditCardChooserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FilterForm.resx">
       <DependentUpon>FilterForm.cs</DependentUpon>

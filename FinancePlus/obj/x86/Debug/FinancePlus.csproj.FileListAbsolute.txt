@@ -20,3 +20,4 @@ C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\
 C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.MonthForm.resources
 C:\Users\Itay\documents\visual studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.CommentForm.resources
 C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.FilterForm.resources
+C:\Users\Itay\Documents\Visual Studio 2010\Projects\FinancePlus\FinancePlus\obj\x86\Debug\FinancePlus.CreditCardChooserForm.resources

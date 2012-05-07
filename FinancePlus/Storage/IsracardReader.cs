@@ -43,7 +43,7 @@ namespace FinancePlus.PersistentLayer
             return null;
         }
 
-        public static KeyValuePair<DateTime, ArrayList> read(StreamReader sr, string filename)
+        public static KeyValuePair<DateTime, ArrayList> read1(StreamReader sr, string filename)
         {
             ArrayList transactions = new ArrayList();
             PaymentInfo paymentInfo = null;
@@ -52,7 +52,7 @@ namespace FinancePlus.PersistentLayer
             using (XmlReader reader = XmlReader.Create(sr))
             {
                 List<string> row;
-                
+
                 while ((row = getNextLine(reader)) != null)
                 {
                     try
@@ -60,7 +60,7 @@ namespace FinancePlus.PersistentLayer
                         Transaction e = parseExpense(row);
                         transactions.Add(e);
                     }
-                    catch 
+                    catch
                     {
                         try
                         {
@@ -90,7 +90,63 @@ namespace FinancePlus.PersistentLayer
             foreach (Transaction t in transactions)
                 t.paymentInfo = paymentInfo;
 
-            return new KeyValuePair<DateTime, ArrayList>(paymentInfo.getEndDate(),transactions);
+            return new KeyValuePair<DateTime, ArrayList>(paymentInfo.getEndDate(), transactions);
+        }
+
+        public static CreditCardReport read(StreamReader sr, string filename)
+        {
+            CreditCardReport cardData = null;
+            ArrayList transactions = new ArrayList();
+
+            using (XmlReader reader = XmlReader.Create(sr))
+            {
+                List<string> row;
+
+                while ((row = getNextLine(reader)) != null)
+                {
+                    try
+                    {
+                        Transaction e = parseExpense(row);
+                        transactions.Add(e);
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            Transaction e = parseInternationalExpense(row);
+                            transactions.Add(e);
+                        }
+                        catch
+                        {
+                            try
+                            {
+                                DateTime endDate = parseSumRow(row);
+                                double total = parseToalFromSumRow(row);
+                                string creditCardNumber = getCreditCardNumber(filename);
+
+                                /* assuming that this is acually the last line and all the transactions where parsed */
+                                DateTime startDate = getFirstTransactionDate(transactions, endDate);
+                                
+                                /* we should get here only once */
+                                cardData = new CreditCardReport();
+                                cardData.chargeDate = endDate;
+                                cardData.total = total;
+                                cardData.creditCard = null; // not available in Isracard report
+                                //cardData.lastFourDigits = null;    // not available in Isracard report 
+                                //cardData.bankAccountNumber = null; // not available in Isracard report
+                                //cardData.bankBranchNumber = null;  // not available in Isracard report
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    }
+                }
+            }
+
+            cardData.transactions = transactions;
+
+            return cardData;
         }
 
         public static DateTime getFirstTransactionDate(ArrayList transactions, DateTime endDate)
@@ -153,6 +209,13 @@ namespace FinancePlus.PersistentLayer
             if (!row[1].StartsWith("@"))
                 throw new Exception();
             return Database.stringDateToDateTime(row[2]);
+        }
+
+        public static double parseToalFromSumRow(List<string> row)
+        {
+            if (!row[1].StartsWith("@"))
+                throw new Exception();
+            return Double.Parse(row[3]);
         }
 
 #if false

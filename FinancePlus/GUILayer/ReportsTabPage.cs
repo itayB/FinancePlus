@@ -15,12 +15,14 @@ namespace FinancePlus
             clearAllReportsData();
             updateBankAccountsList();
             updateCreditCardsList();
+            updateCreditCardReportsList();
         }
 
         public void clearAllReportsData()
         {
             bankAccountsListView.Items.Clear();
             creditCardsListView.Items.Clear();
+            creditCardReportsListView.Items.Clear();
         }
 
         public void updateBankAccountsList()
@@ -49,6 +51,27 @@ namespace FinancePlus
                 if (card.bank != null)
                     lvi.SubItems.Add(card.bank.accountNumber);
                 creditCardsListView.Items.Add(lvi);
+            }
+        }
+
+        public void updateCreditCardReportsList()
+        {
+            foreach (CreditCardReport cardReport in Database.creditCardReportsList)
+            {
+                ListViewItem lvi = new ListViewItem(ToShortMonthYearString(cardReport.chargeDate));
+                if (cardReport.creditCard != null)
+                {
+                    lvi.SubItems.Add(cardReport.creditCard.lastFourDigits);
+                    lvi.SubItems.Add(cardReport.creditCard.description);
+                }
+                else
+                {
+                    lvi.SubItems.Add("");
+                    lvi.SubItems.Add("");
+                }
+                lvi.SubItems.Add(cardReport.transactions.Count.ToString());
+                lvi.SubItems.Add(cardReport.total.ToString());
+                creditCardReportsListView.Items.Add(lvi);
             }
         }
 

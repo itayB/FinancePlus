@@ -302,7 +302,8 @@ namespace FinancePlus
             string str = "";
             Month m = getSelectedMonth();
             foreach (PaymentInfo p in m.paymentsInfoList)
-                str += p.ToString() + "\n";
+                if (p != null)
+                    str += p.ToString() + "\n";
 
             sizeLabel.Text = str;
 
@@ -450,7 +451,29 @@ namespace FinancePlus
                         return;
                 }
 
-                DataReader.readFile(sr, paymentType, file);
+                if (paymentType == PaymentType.Isracard || paymentType == PaymentType.Cal)
+                {
+                    CreditCardReport cardReport = DataReader.readCreditCardReportFile(sr, paymentType, file);
+                    
+                    
+                    // TODO: GUI to choose creditcard
+                    //       update the creditcard in the report
+                    CreditCardChooserForm form = new CreditCardChooserForm();
+                    form.Tag = cardReport;
+
+                    form.ShowDialog();
+
+                    // TODO: card report validation
+                    if (cardReport.creditCard == null)
+                    {
+                    }
+                    else
+                        Database.creditCardReportsList.Add(cardReport);
+                }
+                else
+                {
+                    DataReader.readFile(sr, paymentType, file);
+                }
                 updateMonths();
                 updateMonthData();
             }
