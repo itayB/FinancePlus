@@ -97,6 +97,10 @@ namespace FinancePlus.Storage
                                                 if (cardReader.Read())
                                                     card.owner = cardReader.Value.Trim();
                                                 break;
+                                            case "PaymentType":
+                                                if (cardReader.Read())
+                                                    card.paymentType = PaymentInfo.parsePaymentTypeString(cardReader.Value.Trim());
+                                                break;
                                             //bank
 
                                         }
@@ -148,6 +152,7 @@ namespace FinancePlus.Storage
                     writer.WriteElementString("ExpiryDate", card.expiryDate.ToShortDateString());
                     writer.WriteElementString("Description", card.description);
                     writer.WriteElementString("Owner", card.owner);
+                    writer.WriteElementString("PaymentType", card.paymentType.ToString());
                     writer.WriteEndElement();
                 }
 

@@ -406,77 +406,67 @@ namespace FinancePlus
 
         private void loadFilePoalimToolStripButton_Click(object sender, EventArgs e)
         {
-            loadFileToolStripButton_Click(PaymentType.Isracard);
+            //loadFileToolStripButton_Click(new PoalimReportReader());
         }
 
         private void loadFileIsracardToolStripButton_Click(object sender, EventArgs e)
         {
-            loadFileToolStripButton_Click(PaymentType.Isracard);
+            loadFileToolStripButton_Click(new IsracardReportReader());
         }
 
         private void loadFileCalToolStripButton_Click(object sender, EventArgs e)
         {
-            loadFileToolStripButton_Click(PaymentType.Cal);
+            loadFileToolStripButton_Click(new CalReportReader());
         }
 
-        private void loadFileToolStripButton_Click(PaymentType paymentType)
+        private void loadFileToolStripButton_Click(ReportReader reportReader)
         {
-            openFileDialog1.Title = Database.OPEN_REPORT_STRING;
-            switch (paymentType)
-            {
-                case PaymentType.Isracard:
-                    openFileDialog1.Title += Database.ISRACARD_STRING;
-                    break;
-                case PaymentType.Cal:
-                    openFileDialog1.Title += Database.CAL_STRING;
-                    break;
-                case PaymentType.Poalim:
-                    openFileDialog1.Title += Database.POALIM_STRING;
-                    break; 
-            }
-            
-            DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
-            if (result == DialogResult.OK) // Test result.
-            {
-                string file = openFileDialog1.FileName;
-                StreamReader sr = DataReader.getStreamReader(file);
-                while (sr == null)
-                {
-                    DialogResult result1 = MessageBox.Show(Database.ACCESS_FAILED_WARNING_MESSAGE,
-                                                           Database.WARNING_STRING,
-                                                           MessageBoxButtons.RetryCancel);
-                    if (result1 == DialogResult.Retry)
-                        sr = DataReader.getStreamReader(file);
-                    else
-                        return;
-                }
+            openFileDialog1.Title = Database.OPEN_REPORT_STRING + reportReader.getOpenFileDialogTitle();
+            DialogResult result = openFileDialog1.ShowDialog();
 
-                if (paymentType == PaymentType.Isracard || paymentType == PaymentType.Cal)
+            if (result != DialogResult.OK)
+                return;
+
+            string file = openFileDialog1.FileName;
+            StreamReader sr = reportReader.getStreamReader(file);
+            while (sr == null)
+            {
+                DialogResult result1 = MessageBox.Show(Database.ACCESS_FAILED_WARNING_MESSAGE,
+                                                        Database.WARNING_STRING,
+                                                        MessageBoxButtons.RetryCancel);
+                if (result1 == DialogResult.Retry)
+                    sr = reportReader.getStreamReader(file);
+                else
+                    return;
+            }
+
+            if (reportReader.isCreditCardReader())
+            {
+                CreditCardReport cardReport = reportReader.readCreditCardReportFile(sr);
+
+                if (reportReader.getPaymentType() == PaymentType.Isracard)
                 {
-                    CreditCardReport cardReport = DataReader.readCreditCardReportFile(sr, paymentType, file);
-                    
-                    
-                    // TODO: GUI to choose creditcard
-                    //       update the creditcard in the report
                     CreditCardChooserForm form = new CreditCardChooserForm();
                     form.Tag = cardReport;
 
+                    // the ShowDialog waits until the form will be closed
                     form.ShowDialog();
+                }
 
-                    // TODO: card report validation
-                    if (cardReport.creditCard == null)
-                    {
-                    }
-                    else
-                        Database.creditCardReportsList.Add(cardReport);
-                }
-                else
+                // TODO: card report validation
+                if (reportReader.isValid(cardReport))
                 {
-                    DataReader.readFile(sr, paymentType, file);
+                    Database.creditCardReportsList.Add(cardReport);
+                    // add transaction to db
                 }
-                updateMonths();
-                updateMonthData();
+
             }
+            else
+            {
+                //DataReader.readFile(sr, reportReader, file);
+            }
+            updateMonths();
+            updateMonthData();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

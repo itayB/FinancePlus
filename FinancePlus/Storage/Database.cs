@@ -159,6 +159,17 @@ namespace FinancePlus.Storage
             return result;
         }
 
+        public static CreditCard getCreditCardByLastDigits(string creditCardNumber)
+        {
+            if (creditCardNumber == null)
+                return null;
+
+            foreach(CreditCard card in Database.creditCardsList)
+                if (card.lastFourDigits.Equals(creditCardNumber))
+                    return card;
+            
+            return null;
+        }
 
         public static void load()
         {

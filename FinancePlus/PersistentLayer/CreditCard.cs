@@ -8,6 +8,7 @@ namespace FinancePlus.PersistentLayer
     class CreditCard
     {
         // Fields
+        public PaymentType paymentType;
         public string lastFourDigits;
         //public DateTime validFromDate;
         public DateTime expiryDate; // the day represents the charge day of the month

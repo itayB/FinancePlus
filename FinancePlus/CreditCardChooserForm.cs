@@ -23,10 +23,13 @@ namespace FinancePlus
         {
             foreach (CreditCard card in Database.creditCardsList)
             {
-                ListViewItem lvi = new ListViewItem(card.lastFourDigits);
-                lvi.SubItems.Add(card.description);
-                lvi.Tag = card;
-                creditCardsListView.Items.Add(lvi);
+                if (card.paymentType == PaymentType.Isracard)
+                {
+                    ListViewItem lvi = new ListViewItem(card.lastFourDigits);
+                    lvi.SubItems.Add(card.description);
+                    lvi.Tag = card;
+                    creditCardsListView.Items.Add(lvi);
+                }
             }
         }
 
