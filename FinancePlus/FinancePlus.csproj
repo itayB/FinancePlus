@@ -82,36 +82,36 @@
     </Compile>
     <Compile Include="GUILayer\ListViewGroupHeaderSorter.cs" />
     <Compile Include="GUILayer\ListViewGroupSorter.cs" />
-    <Compile Include="PersistentLayer\BankAccount.cs" />
-    <Compile Include="PersistentLayer\Category.cs" />
-    <Compile Include="PersistentLayer\CreditCard.cs" />
-    <Compile Include="PersistentLayer\Income.cs" />
-    <Compile Include="PersistentLayer\InternationalTransaction.cs" />
-    <Compile Include="PersistentLayer\Logger.cs" />
-    <Compile Include="PersistentLayer\PaymentInfo.cs" />
-    <Compile Include="PersistentLayer\TransactionsSorter.cs" />
+    <Compile Include="FunctionalLayer\BankAccount.cs" />
+    <Compile Include="FunctionalLayer\Category.cs" />
+    <Compile Include="FunctionalLayer\CreditCard.cs" />
+    <Compile Include="FunctionalLayer\Income.cs" />
+    <Compile Include="FunctionalLayer\InternationalTransaction.cs" />
+    <Compile Include="FunctionalLayer\Logger.cs" />
+    <Compile Include="FunctionalLayer\PaymentInfo.cs" />
+    <Compile Include="FunctionalLayer\TransactionsSorter.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersistentLayer\CreditCardReport.cs" />
-    <Compile Include="Storage\CalReportReader.cs" />
-    <Compile Include="Storage\DataHandler.cs" />
-    <Compile Include="PersistentLayer\Transaction.cs" />
-    <Compile Include="PersistentLayer\Month.cs" />
-    <Compile Include="PersistentLayer\PrimaryCategory.cs" />
-    <Compile Include="PersistentLayer\SeconderyCategory.cs" />
+    <Compile Include="FunctionalLayer\CreditCardReport.cs" />
+    <Compile Include="PersistentLayer\CalReportReader.cs" />
+    <Compile Include="PersistentLayer\DataHandler.cs" />
+    <Compile Include="FunctionalLayer\Transaction.cs" />
+    <Compile Include="FunctionalLayer\Month.cs" />
+    <Compile Include="FunctionalLayer\PrimaryCategory.cs" />
+    <Compile Include="FunctionalLayer\SeconderyCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Storage\Database.cs" />
-    <Compile Include="Storage\IsracardReportReader.cs" />
-    <Compile Include="Storage\MultimapBK.cs" />
-    <Compile Include="Storage\MultiMapBKException.cs" />
-    <Compile Include="Storage\PoalimReader.cs" />
-    <Compile Include="Storage\ReportReader.cs" />
-    <Compile Include="Storage\ReportWriter.cs" />
+    <Compile Include="PersistentLayer\Database.cs" />
+    <Compile Include="PersistentLayer\IsracardReportReader.cs" />
+    <Compile Include="PersistentLayer\MultimapBK.cs" />
+    <Compile Include="PersistentLayer\MultiMapBKException.cs" />
+    <Compile Include="PersistentLayer\PoalimReader.cs" />
+    <Compile Include="PersistentLayer\ReportReader.cs" />
+    <Compile Include="PersistentLayer\ReportWriter.cs" />
     <EmbeddedResource Include="CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </EmbeddedResource>
