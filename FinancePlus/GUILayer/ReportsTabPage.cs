@@ -70,7 +70,7 @@ namespace FinancePlus
                     lvi.SubItems.Add("");
                 }
                 lvi.SubItems.Add(cardReport.transactions.Count.ToString());
-                lvi.SubItems.Add(cardReport.total.ToString());
+                lvi.SubItems.Add(cardReport.getTotal().ToString());
                 creditCardReportsListView.Items.Add(lvi);
             }
         }

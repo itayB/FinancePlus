@@ -8,6 +8,7 @@ namespace FinancePlus.PersistentLayer
     class BankAccount
     {
         // Fields
+        public int hashCode;
         public string accountNumber;    /* 6 digits */
         public string branchNumber;     /* 3 digits */
         public string bankNumber;       /* 2 digits */

@@ -41,38 +41,43 @@ namespace FinancePlus.Storage
                 {
                     try
                     {
-                        Transaction e = parseExpense(row);
-                        transactions.Add(e);
+                        Transaction t = parseExpense(row);
+                        transactions.Add(t);
                     }
                     catch
                     {
                         try
                         {
-                            Transaction e = parseInternationalExpense(row);
-                            transactions.Add(e);
+                            InternationalTransaction t = parseInternationalExpense(row);
+                            transactions.Add(t);
                         }
                         catch
                         {
                             try
                             {
-                                DateTime endDate = parseSumRow(row);
-                                double total = parseToalFromSumRow(row);
-                                //string creditCardNumber = getCreditCardNumber(filename);
-
-                                /* assuming that this is acually the last line and all the transactions where parsed */
-                                DateTime startDate = getFirstTransactionDate(transactions, endDate);
-
-                                /* we should get here only once */
-                                cardData = new CreditCardReport();
-                                cardData.chargeDate = endDate;
-                                cardData.total = total;
-                                cardData.creditCard = null; // not available in Isracard report
-                                //cardData.lastFourDigits = null;    // not available in Isracard report 
-                                //cardData.bankAccountNumber = null; // not available in Isracard report
-                                //cardData.bankBranchNumber = null;  // not available in Isracard report
+                                KeyValuePair<DateTime, double> pair = parseInternationalTotal(row);
+                                cardData.totalInternational.Add(pair.Key, pair.Value);
                             }
                             catch
                             {
+                                try
+                                {
+                                    DateTime endDate = parseSumRow(row);
+                                    double total = parseToalFromSumRow(row);
+                                    //string creditCardNumber = getCreditCardNumber(filename);
+
+                                    /* assuming that this is acually the last line and all the transactions where parsed */
+                                    DateTime startDate = getFirstTransactionDate(transactions, endDate);
+
+                                    /* we should get here only once */
+                                    cardData = new CreditCardReport();
+                                    cardData.chargeDate = endDate;
+                                    cardData.total = total;
+                                    cardData.creditCard = null; // not available in Isracard report
+                                }
+                                catch
+                                {
+                                }
                             }
                         }
                     }
@@ -156,9 +161,9 @@ namespace FinancePlus.Storage
             return e;
         }
 
-        private Transaction parseInternationalExpense(List<string> row)
+        private InternationalTransaction parseInternationalExpense(List<string> row)
         {
-            Transaction e = new Transaction();
+            InternationalTransaction e = new InternationalTransaction();
 
             e.date = Database.stringDateToDateTime(row[0]);
             if (e.date.Equals(new DateTime(1, 1, 1)))
@@ -170,6 +175,14 @@ namespace FinancePlus.Storage
             e.receiptId = Convert.ToInt32(row[8]);
             e.details = "";
             return e;
+        }
+
+        private KeyValuePair<DateTime, double> parseInternationalTotal(List<string> row)
+        {
+            DateTime date = Database.stringDateToDateTime(row[3]);
+            double total = Double.Parse(row[7]);
+
+            return new KeyValuePair<DateTime, double>(date,total);
         }
 
         private static DateTime parseSumRow(List<string> row)

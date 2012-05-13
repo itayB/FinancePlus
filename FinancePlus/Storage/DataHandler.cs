@@ -37,6 +37,10 @@ namespace FinancePlus.Storage
                                     {
                                         switch (bankReader.Name)
                                         {
+                                            case "HashCode":
+                                                if (bankReader.Read())
+                                                    bank.hashCode = Convert.ToInt32(bankReader.Value.Trim());
+                                                break;
                                             case "AccountNumber":
                                                 if (bankReader.Read())
                                                     bank.accountNumber = bankReader.Value.Trim();
@@ -101,8 +105,19 @@ namespace FinancePlus.Storage
                                                 if (cardReader.Read())
                                                     card.paymentType = PaymentInfo.parsePaymentTypeString(cardReader.Value.Trim());
                                                 break;
-                                            //bank
-
+                                            case "BankHashCode":
+                                                int hashCode;
+                                                if (cardReader.Read())
+                                                {
+                                                    hashCode = Convert.ToInt32(cardReader.Value.Trim());
+                                                    foreach (BankAccount b in Database.bankAccounts)
+                                                        if (hashCode == b.hashCode)
+                                                        {
+                                                            card.bank = b;
+                                                            break;
+                                                        }
+                                                }
+                                                break;
                                         }
                                     }
                                 }
@@ -132,6 +147,7 @@ namespace FinancePlus.Storage
                 foreach (BankAccount bank in Database.bankAccounts)
                 {
                     writer.WriteStartElement("Bank");
+                    writer.WriteElementString("HashCode", bank.GetHashCode().ToString());
                     writer.WriteElementString("AccountNumber", bank.accountNumber);
                     writer.WriteElementString("BranchNumber", bank.branchNumber);
                     writer.WriteElementString("BankNumber", bank.bankNumber);
@@ -142,7 +158,7 @@ namespace FinancePlus.Storage
                 }
 
                 writer.WriteEndElement();
-
+                
                 writer.WriteStartElement("CreditCards");
 
                 foreach (CreditCard card in Database.creditCardsList)
@@ -153,6 +169,8 @@ namespace FinancePlus.Storage
                     writer.WriteElementString("Description", card.description);
                     writer.WriteElementString("Owner", card.owner);
                     writer.WriteElementString("PaymentType", card.paymentType.ToString());
+                    if (card.bank != null)
+                        writer.WriteElementString("BankHashCode", card.bank.GetHashCode().ToString());
                     writer.WriteEndElement();
                 }
 

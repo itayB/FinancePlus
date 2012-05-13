@@ -86,6 +86,7 @@
     <Compile Include="PersistentLayer\Category.cs" />
     <Compile Include="PersistentLayer\CreditCard.cs" />
     <Compile Include="PersistentLayer\Income.cs" />
+    <Compile Include="PersistentLayer\InternationalTransaction.cs" />
     <Compile Include="PersistentLayer\Logger.cs" />
     <Compile Include="PersistentLayer\PaymentInfo.cs" />
     <Compile Include="PersistentLayer\TransactionsSorter.cs" />

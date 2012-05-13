@@ -41,10 +41,12 @@ namespace FinancePlus.Storage
                 return false;
             }
 
-            double total = this.getTotalPrice(report);
-            if (total != report.total)
+            double totalFromTransactions = this.getTotalPrice(report);
+            double totalFromReport = report.getTotal();
+
+            if (totalFromTransactions != totalFromReport)
             {
-                Logger.log("Total transactions price (" + total + ") is different than appear in the report (" + report.total + ")");
+                Logger.log("Total transactions price (" + totalFromTransactions + ") is different than appear in the report (" + totalFromReport + ")");
                 return false;
             }
             return true;
