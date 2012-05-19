@@ -49,6 +49,14 @@ namespace FinancePlus.Storage
                 Logger.log("Total transactions price (" + totalFromTransactions + ") is different than appear in the report (" + totalFromReport + ")");
                 return false;
             }
+
+            foreach (CreditCardReport r in Database.creditCardReportsList)
+                if (report.Equals(r))
+                {
+                    Logger.log("This report is already exist in the system");
+                    return false;
+                }
+
             return true;
         }
 

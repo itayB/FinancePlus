@@ -157,7 +157,7 @@ namespace FinancePlus.Storage
                     writer.WriteEndElement();
                 }
 
-                writer.WriteEndElement();
+                writer.WriteEndElement(); // BankAccounts
                 
                 writer.WriteStartElement("CreditCards");
 
@@ -175,6 +175,34 @@ namespace FinancePlus.Storage
                 }
 
                 writer.WriteEndElement(); // CreditCards
+
+                writer.WriteStartElement("CreditCardReports");
+
+                foreach (CreditCardReport report in Database.creditCardReportsList)
+                {
+                    writer.WriteStartElement("CreditCardReport");
+                    writer.WriteElementString("ChargeDate", report.chargeDate.ToShortDateString());
+                    writer.WriteElementString("CreditCardHashCode", report.creditCard.GetHashCode().ToString());
+                    writer.WriteElementString("Total", report.total.ToString());
+                    writer.WriteStartElement("TotalInternational");
+                    foreach (KeyValuePair<DateTime, double> pair in report.totalInternational)
+                    {
+                        writer.WriteStartElement("TotalPair");
+                        writer.WriteElementString("Date", pair.Key.ToShortDateString());
+                        writer.WriteElementString("Total", pair.Value.ToString());
+                        writer.WriteEndElement(); // TotalPair
+                    }
+                    writer.WriteEndElement(); // TotalInternational
+                    writer.WriteStartElement("Transactions");
+                    foreach (Transaction t in report.transactions)
+                    {
+                        writer.WriteElementString("TransactionHashCode",t.GetHashCode().ToString());
+                    }
+                    writer.WriteEndElement(); // Transactions
+                    writer.WriteEndElement(); // CreditCardReport
+                }
+
+                writer.WriteEndElement(); // CreditCardReports
                 writer.WriteEndElement(); // Reports
                 writer.WriteEndDocument();
             }

@@ -15,5 +15,17 @@ namespace FinancePlus.PersistentLayer
         public string description;
         public string owner;
         public BankAccount bank;
+
+        public override bool Equals(System.Object obj)
+        {
+            if (obj == null)
+                return false;
+
+            CreditCard p = obj as CreditCard;
+            if ((System.Object)p == null)
+                return false;
+
+            return (this.paymentType == p.paymentType) && (this.lastFourDigits.Equals(p.lastFourDigits)) && (this.expiryDate.Equals(p.expiryDate)) && (this.owner.Equals(p.owner));
+        }
     }
 }

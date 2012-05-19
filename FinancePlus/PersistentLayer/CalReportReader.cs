@@ -31,7 +31,6 @@ namespace FinancePlus.Storage
         {
             CreditCardReport cardData = null;
             ArrayList transactions = new ArrayList();
-            PaymentInfo paymentInfo = null;
 
 
             string contentBuffer = sr.ReadToEnd();

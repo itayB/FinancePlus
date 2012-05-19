@@ -170,7 +170,10 @@ namespace FinancePlus.Storage
                 throw new Exception();
             Database.stringDateToDateTime(row[1]);
             e.businessName = row[2];
+            e.city = row[3];
+            e.originalCurrency = row[4];
             e.transactionPrice = Double.Parse(row[5]);
+            e.billingCurrency = row[6];
             e.billingPrice = Double.Parse(row[7]);
             e.receiptId = Convert.ToInt32(row[8]);
             e.details = "";

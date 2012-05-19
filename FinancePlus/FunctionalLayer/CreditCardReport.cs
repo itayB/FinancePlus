@@ -32,5 +32,17 @@ namespace FinancePlus.Storage
 
             return total;
         }
+
+        public override bool Equals(System.Object obj)
+        {
+            if (obj == null)
+                return false;
+
+            CreditCardReport p = obj as CreditCardReport;
+            if ((System.Object)p == null)
+                return false;
+
+            return (this.chargeDate == p.chargeDate) && (this.creditCard == p.creditCard) && (this.total == p.total);
+        }
     }
 }
