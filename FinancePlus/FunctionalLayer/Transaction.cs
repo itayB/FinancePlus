@@ -17,6 +17,7 @@ namespace FinancePlus.PersistentLayer
     public class Transaction
     {
         // Fields
+        public int hashCode;
         public DateTime date;
         public String businessName;
         public double transactionPrice;

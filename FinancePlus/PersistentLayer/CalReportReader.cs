@@ -29,7 +29,7 @@ namespace FinancePlus.Storage
 
         public override CreditCardReport readCreditCardReportFile(StreamReader sr)
         {
-            CreditCardReport cardData = null;
+            CreditCardReport cardData = new CreditCardReport();
             ArrayList transactions = new ArrayList();
 
 
@@ -64,7 +64,6 @@ namespace FinancePlus.Storage
                             try
                             {
                                 DateTime endDate = parseDateFromInformationRow(row);
-                                double total = 0;// parseToalFromSumRow(row);
                                 string creditCardNumber = parseCreditCardFromSumRow(row);
 
                                 /* assuming that this is acually the last line and all the transactions where parsed */
@@ -72,15 +71,19 @@ namespace FinancePlus.Storage
 
                                 //paymentInfo = new PaymentInfo(creditCardNumber, PaymentType.Cal, startDate, endDate);
                                 /* we should get here only once */
-                                cardData = new CreditCardReport();
+                                //cardData = new CreditCardReport();
                                 cardData.chargeDate = endDate;
-                                cardData.total = total;
 
                                 cardData.creditCard = Database.getCreditCardByLastDigits(creditCardNumber);
 
                             }
                             catch
                             {
+                                try
+                                {
+                                    cardData.total = parseToalFromSumRow(row);
+                                }
+                                catch { }
                             }
                         }
                     }
@@ -153,8 +156,9 @@ namespace FinancePlus.Storage
 
         private double parseToalFromSumRow(List<string> row)
         {
-            if (row.Count != 2)
+            if (row.Count != 3)
                 throw new Exception();
+
             return Double.Parse(row[1]);
         }
 

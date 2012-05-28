@@ -44,18 +44,11 @@ namespace FinancePlus.Storage
             double totalFromTransactions = this.getTotalPrice(report);
             double totalFromReport = report.getTotal();
 
-            if (totalFromTransactions != totalFromReport)
+            if (!Common.Equals(totalFromTransactions, totalFromReport))
             {
                 Logger.log("Total transactions price (" + totalFromTransactions + ") is different than appear in the report (" + totalFromReport + ")");
                 return false;
             }
-
-            foreach (CreditCardReport r in Database.creditCardReportsList)
-                if (report.Equals(r))
-                {
-                    Logger.log("This report is already exist in the system");
-                    return false;
-                }
 
             return true;
         }

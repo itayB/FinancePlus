@@ -5,6 +5,7 @@ using System.Text;
 using System.Xml;
 using FinancePlus.PersistentLayer;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace FinancePlus.Storage
 {
@@ -19,6 +20,7 @@ namespace FinancePlus.Storage
             {
                 BankAccount bank = null;
                 CreditCard card = null;
+                CreditCardReport report = null;
 
                 while (reader.Read())
                 {
@@ -28,46 +30,8 @@ namespace FinancePlus.Storage
                         case "Bank":
                             if (reader.IsStartElement())
                             {
-                                bank = new BankAccount();
                                 XmlReader bankReader = reader.ReadSubtree();
-
-                                while (bankReader.Read())
-                                {
-                                    if (bankReader.IsStartElement())
-                                    {
-                                        switch (bankReader.Name)
-                                        {
-                                            case "HashCode":
-                                                if (bankReader.Read())
-                                                    bank.hashCode = Convert.ToInt32(bankReader.Value.Trim());
-                                                break;
-                                            case "AccountNumber":
-                                                if (bankReader.Read())
-                                                    bank.accountNumber = bankReader.Value.Trim();
-                                                break;
-                                            case "BranchNumber":
-                                                if (bankReader.Read())
-                                                    bank.branchNumber = bankReader.Value.Trim();
-                                                break;
-                                            case "BankNumber":
-                                                if (bankReader.Read())
-                                                    bank.bankNumber = bankReader.Value.Trim();
-                                                break;
-                                            case "BankName":
-                                                if (bankReader.Read())
-                                                    bank.bankName = bankReader.Value.Trim();
-                                                break;
-                                            case "BranchName":
-                                                if (bankReader.Read())
-                                                    bank.branchName = bankReader.Value.Trim();
-                                                break;
-                                            case "Owner":
-                                                if (bankReader.Read())
-                                                    bank.owner = bankReader.Value.Trim();
-                                                break;
-                                        }
-                                    }
-                                }
+                                bank = loadBank(bankReader);
                                 reader.Skip();
                                 Database.bankAccounts.Add(bank);
                             }
@@ -76,60 +40,172 @@ namespace FinancePlus.Storage
                         case "CreditCard":
                             if (reader.IsStartElement())
                             {
-                                card = new CreditCard();
                                 XmlReader cardReader = reader.ReadSubtree();
-
-                                while (cardReader.Read())
-                                {
-                                    if (cardReader.IsStartElement())
-                                    {
-                                        switch (cardReader.Name)
-                                        {
-                                            case "LastFourDigits":
-                                                if (cardReader.Read())
-                                                    card.lastFourDigits = cardReader.Value.Trim();
-                                                break;
-                                            case "ExpiryDate":
-                                                if (cardReader.Read())
-                                                    card.expiryDate = Database.stringDateToDateTime(cardReader.Value.Trim());
-                                                break;
-                                            case "Description":
-                                                if (cardReader.Read())
-                                                    card.description = cardReader.Value.Trim();
-                                                break;
-                                            case "Owner":
-                                                if (cardReader.Read())
-                                                    card.owner = cardReader.Value.Trim();
-                                                break;
-                                            case "PaymentType":
-                                                if (cardReader.Read())
-                                                    card.paymentType = PaymentInfo.parsePaymentTypeString(cardReader.Value.Trim());
-                                                break;
-                                            case "BankHashCode":
-                                                int hashCode;
-                                                if (cardReader.Read())
-                                                {
-                                                    hashCode = Convert.ToInt32(cardReader.Value.Trim());
-                                                    foreach (BankAccount b in Database.bankAccounts)
-                                                        if (hashCode == b.hashCode)
-                                                        {
-                                                            card.bank = b;
-                                                            break;
-                                                        }
-                                                }
-                                                break;
-                                        }
-                                    }
-                                }
+                                card = loadCreditCard(cardReader);
                                 reader.Skip();
                                 Database.creditCardsList.Add(card);
                             }
                             break;
-
+                        case "CreditCardReport":
+                            if (reader.IsStartElement())
+                            {
+                                XmlReader reportReader = reader.ReadSubtree();
+                                report = loadCreditCardReport(reportReader);
+                                reader.Skip();
+                                Database.addCreditCardReport(report);
+                            }
+                            break;
                     }
-
                 }
             }
+        }
+
+        public static BankAccount loadBank(XmlReader bankReader)
+        {
+            BankAccount bank = new BankAccount();
+
+            while (bankReader.Read())
+            {
+                if (bankReader.IsStartElement())
+                {
+                    string name = bankReader.Name;
+                    string value = null;
+                    if (bankReader.Read())
+                        value = bankReader.Value.Trim();
+                    switch (name)
+                    {
+                        case "HashCode":
+                            bank.hashCode = Convert.ToInt32(value);
+                            break;
+                        case "AccountNumber":
+                            bank.accountNumber = value;
+                            break;
+                        case "BranchNumber":
+                            bank.branchNumber = value;
+                            break;
+                        case "BankNumber":
+                            bank.bankNumber = value;
+                            break;
+                        case "BankName":
+                            bank.bankName = value;
+                            break;
+                        case "BranchName":
+                            bank.branchName = value;
+                            break;
+                        case "Owner":
+                            bank.owner = value;
+                            break;
+                    }
+                }
+            }
+
+            return bank;
+        }
+
+        public static CreditCard loadCreditCard(XmlReader cardReader)
+        {
+            CreditCard card = new CreditCard();
+
+            while (cardReader.Read())
+            {
+                if (cardReader.IsStartElement())
+                {
+                    string name = cardReader.Name;
+                    string value = null;
+                    if (cardReader.Read())
+                        value = cardReader.Value.Trim();
+                    switch (name)
+                    {
+                        case "HashCode":
+                            card.hashCode = Convert.ToInt32(value);
+                            break;
+                        case "LastFourDigits":
+                            card.lastFourDigits = value;
+                            break;
+                        case "ExpiryDate":
+                            card.expiryDate = Database.stringDateToDateTime(value);
+                            break;
+                        case "Description":
+                            card.description = value;
+                            break;
+                        case "Owner":
+                            card.owner = value;
+                            break;
+                        case "PaymentType":
+                            card.paymentType = PaymentInfo.parsePaymentTypeString(value);
+                            break;
+                        case "BankHashCode":
+                            int hashCode;
+                            hashCode = Convert.ToInt32(value);
+                            foreach (BankAccount b in Database.bankAccounts)
+                                if (hashCode == b.hashCode)
+                                {
+                                    card.bank = b;
+                                    break;
+                                }
+
+                            break;
+                    }
+                }
+            }
+
+            return card;
+        }
+
+        public static CreditCardReport loadCreditCardReport(XmlReader reportReader)
+        {
+            CreditCardReport report = new CreditCardReport();
+            while (reportReader.Read())
+            {
+                if (reportReader.IsStartElement())
+                {
+                    string name = reportReader.Name;
+                    string value = null;
+                    if (reportReader.Read())
+                        value = reportReader.Value.Trim();
+                    switch (name)
+                    {
+                        case "ChargeDate":
+                            report.chargeDate = Database.stringDateToDateTime(value);
+                            break;
+                        case "CreditCardHashCode":
+                            int hashCode;
+                            hashCode = Convert.ToInt32(value);
+                            foreach (CreditCard c in Database.creditCardsList)
+                                if (hashCode == c.hashCode)
+                                {
+                                    report.creditCard = c;
+                                    break;
+                                }
+                            break;
+                        case "TotalLocal":
+                            report.total = Double.Parse(value);
+                            break;
+                        case "TotalPair":
+                            DateTime date = new DateTime();
+                            double total = 0;
+                            if (reportReader.Read() && reportReader.Name.Equals("Date") && reportReader.Read())
+                                date = Database.stringDateToDateTime(reportReader.Value.Trim());
+                            if (reportReader.Read() && reportReader.Read() && reportReader.Read() && reportReader.Name.Equals("Total") && reportReader.Read())
+                                total = Double.Parse(reportReader.Value.Trim());
+                            report.totalInternational.Add(date, total);
+                            break;
+                        case "TransactionHashCode":
+                            int hash;
+                            hash = Convert.ToInt32(value);
+                            foreach(KeyValuePair<DateTime,Month> pair in Database.months)
+                                foreach (Transaction t in ((Month)pair.Value).getTransactions())
+                                    if (hash == t.hashCode)
+                                    {
+                                        report.transactions.Add(t);
+                                        break;
+                                    }
+                            break;
+                    }
+                }
+            }
+
+            return report;
         }
 
         public static void saveReportsToXML()
@@ -164,6 +240,7 @@ namespace FinancePlus.Storage
                 foreach (CreditCard card in Database.creditCardsList)
                 {
                     writer.WriteStartElement("CreditCard");
+                    writer.WriteElementString("HashCode", card.GetHashCode().ToString());
                     writer.WriteElementString("LastFourDigits", card.lastFourDigits);
                     writer.WriteElementString("ExpiryDate", card.expiryDate.ToShortDateString());
                     writer.WriteElementString("Description", card.description);
@@ -178,12 +255,12 @@ namespace FinancePlus.Storage
 
                 writer.WriteStartElement("CreditCardReports");
 
-                foreach (CreditCardReport report in Database.creditCardReportsList)
+                foreach (CreditCardReport report in Database.getCreditCardReportsList())
                 {
                     writer.WriteStartElement("CreditCardReport");
                     writer.WriteElementString("ChargeDate", report.chargeDate.ToShortDateString());
                     writer.WriteElementString("CreditCardHashCode", report.creditCard.GetHashCode().ToString());
-                    writer.WriteElementString("Total", report.total.ToString());
+                    writer.WriteElementString("TotalLocal", report.total.ToString());
                     writer.WriteStartElement("TotalInternational");
                     foreach (KeyValuePair<DateTime, double> pair in report.totalInternational)
                     {

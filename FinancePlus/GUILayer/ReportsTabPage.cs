@@ -5,6 +5,7 @@ using System.Text;
 using FinancePlus.Storage;
 using FinancePlus.PersistentLayer;
 using System.Windows.Forms;
+using FinancePlus.GUILayer;
 
 namespace FinancePlus
 {
@@ -12,6 +13,8 @@ namespace FinancePlus
     {
         public void updateReportsData()
         {
+            creditCardReportsListView.ListViewItemSorter = new ListViewSorter();
+            creditCardsListView.ListViewItemSorter = new ListViewSorter();
             clearAllReportsData();
             updateBankAccountsList();
             updateCreditCardsList();
@@ -39,14 +42,14 @@ namespace FinancePlus
             }
         }
 
-        public void updateCreditCardsList()
+        public void updateCreditCardsList1()
         {
             foreach (CreditCard card in Database.creditCardsList)
             {
                 ListViewItem lvi = new ListViewItem(card.lastFourDigits);
                 lvi.SubItems.Add(card.description);
                 lvi.SubItems.Add(card.owner);
-                lvi.SubItems.Add(ToShortMonthYearString(card.expiryDate));
+                lvi.SubItems.Add(Common.toShortMonthYearString(card.expiryDate));
                 lvi.SubItems.Add(ToShortDayString(card.expiryDate));
                 if (card.bank != null)
                     lvi.SubItems.Add(card.bank.accountNumber);
@@ -54,26 +57,48 @@ namespace FinancePlus
             }
         }
 
-        public void updateCreditCardReportsList()
+        public void updateCreditCardsList()
         {
-            foreach (CreditCardReport cardReport in Database.creditCardReportsList)
+            foreach (CreditCard card in Database.creditCardsList)
             {
-                ListViewItem lvi = new ListViewItem(ToShortMonthYearString(cardReport.chargeDate));
-                if (cardReport.creditCard != null)
-                {
-                    lvi.SubItems.Add(cardReport.creditCard.lastFourDigits);
-                    lvi.SubItems.Add(cardReport.creditCard.description);
-                }
-                else
-                {
-                    lvi.SubItems.Add("");
-                    lvi.SubItems.Add("");
-                }
-                lvi.SubItems.Add(cardReport.transactions.Count.ToString());
-                lvi.SubItems.Add(cardReport.getTotal().ToString());
-                creditCardReportsListView.Items.Add(lvi);
+                string[] strings = { card.lastFourDigits, 
+                                     card.description, 
+                                     card.owner,
+                                     Common.toShortMonthYearString(card.expiryDate), 
+                                     ToShortDayString(card.expiryDate),
+                                     card.bank.accountNumber};
+
+                object[] objects = { card.lastFourDigits, 
+                                     card.description, 
+                                     card.owner,
+                                     card.expiryDate, 
+                                     card.expiryDate.Day,
+                                     card.bank.accountNumber};
+
+                GUIHandler.addListViewItem(creditCardsListView, strings, objects);
             }
         }
+
+        public void updateCreditCardReportsList()
+        {
+            foreach (CreditCardReport cardReport in Database.getCreditCardReportsList())
+            {
+                string[] strings = { Common.toShortMonthYearString(cardReport.chargeDate), 
+                                     cardReport.creditCard.lastFourDigits, 
+                                     cardReport.creditCard.description,
+                                     cardReport.transactions.Count.ToString(), 
+                                     cardReport.getTotal().ToString()};
+                
+                object[] objects = { cardReport.chargeDate, 
+                                     cardReport.creditCard.lastFourDigits, 
+                                     cardReport.creditCard.description,
+                                     cardReport.transactions.Count, 
+                                     cardReport.getTotal()};
+
+                GUIHandler.addListViewItem(creditCardReportsListView,strings,objects);
+            }
+        }
+
 
         public string ToShortDayString(DateTime date)
         {
@@ -83,16 +108,14 @@ namespace FinancePlus
             return "" + date.Day;
         }
 
-        public string ToShortMonthYearString(DateTime date)
+        private void creditCardReportsListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            string res = "";
-
-            if (date.Month < 10)
-                res += "0";
-            res += date.Month + "/" + date.Year; 
-
-            return res; 
+            GUIHandler.listView_OnColumnClick(sender, e, creditCardReportsListView);
         }
 
+        private void creditCardsListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            GUIHandler.listView_OnColumnClick(sender, e, creditCardsListView);
+        }
     }
 }

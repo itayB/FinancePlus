@@ -115,22 +115,13 @@
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tillMonthlabel = new System.Windows.Forms.Label();
-            this.tillMonthComboBox = new System.Windows.Forms.ComboBox();
-            this.sizeLabel = new System.Windows.Forms.Label();
             this.reportsTabPage = new System.Windows.Forms.TabPage();
-            this.creditCardReportsListView = new System.Windows.Forms.ListView();
-            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.creditCardsListView = new System.Windows.Forms.ListView();
-            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView4 = new System.Windows.Forms.ListView();
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bankAccountsListView = new System.Windows.Forms.ListView();
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -138,13 +129,22 @@
             this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.creditCardsListView = new System.Windows.Forms.ListView();
+            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.creditCardReportsListView = new System.Windows.Forms.ListView();
+            this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView4 = new System.Windows.Forms.ListView();
-            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tillMonthlabel = new System.Windows.Forms.Label();
+            this.tillMonthComboBox = new System.Windows.Forms.ComboBox();
+            this.sizeLabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expensesChart)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -877,36 +877,6 @@
             this.columnHeader28.Text = "הערות";
             this.columnHeader28.Width = 168;
             // 
-            // tillMonthlabel
-            // 
-            this.tillMonthlabel.AutoSize = true;
-            this.tillMonthlabel.Location = new System.Drawing.Point(289, 36);
-            this.tillMonthlabel.Name = "tillMonthlabel";
-            this.tillMonthlabel.Size = new System.Drawing.Size(24, 13);
-            this.tillMonthlabel.TabIndex = 19;
-            this.tillMonthlabel.Text = "עד:";
-            this.tillMonthlabel.Visible = false;
-            // 
-            // tillMonthComboBox
-            // 
-            this.tillMonthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tillMonthComboBox.FormattingEnabled = true;
-            this.tillMonthComboBox.Location = new System.Drawing.Point(319, 33);
-            this.tillMonthComboBox.Name = "tillMonthComboBox";
-            this.tillMonthComboBox.Size = new System.Drawing.Size(121, 21);
-            this.tillMonthComboBox.TabIndex = 20;
-            this.tillMonthComboBox.Visible = false;
-            this.tillMonthComboBox.SelectedIndexChanged += new System.EventHandler(this.tillMonthComboBox_SelectedIndexChanged);
-            // 
-            // sizeLabel
-            // 
-            this.sizeLabel.AutoSize = true;
-            this.sizeLabel.Location = new System.Drawing.Point(511, 36);
-            this.sizeLabel.Name = "sizeLabel";
-            this.sizeLabel.Size = new System.Drawing.Size(35, 13);
-            this.sizeLabel.TabIndex = 21;
-            this.sizeLabel.Text = "label1";
-            // 
             // reportsTabPage
             // 
             this.reportsTabPage.Controls.Add(this.listView4);
@@ -921,90 +891,47 @@
             this.reportsTabPage.Text = "ריכוז דוחות כ. אשראי";
             this.reportsTabPage.UseVisualStyleBackColor = true;
             // 
-            // creditCardReportsListView
+            // listView4
             // 
-            this.creditCardReportsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader29,
-            this.columnHeader31,
-            this.columnHeader32,
-            this.columnHeader45,
-            this.columnHeader35});
-            this.creditCardReportsListView.FullRowSelect = true;
-            this.creditCardReportsListView.Location = new System.Drawing.Point(170, 238);
-            this.creditCardReportsListView.Name = "creditCardReportsListView";
-            this.creditCardReportsListView.RightToLeftLayout = true;
-            this.creditCardReportsListView.Size = new System.Drawing.Size(433, 258);
-            this.creditCardReportsListView.TabIndex = 1;
-            this.creditCardReportsListView.UseCompatibleStateImageBehavior = false;
-            this.creditCardReportsListView.View = System.Windows.Forms.View.Details;
+            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader46,
+            this.columnHeader47,
+            this.columnHeader49,
+            this.columnHeader50,
+            this.columnHeader51});
+            this.listView4.FullRowSelect = true;
+            this.listView4.Location = new System.Drawing.Point(811, 238);
+            this.listView4.Name = "listView4";
+            this.listView4.RightToLeftLayout = true;
+            this.listView4.Size = new System.Drawing.Size(399, 258);
+            this.listView4.TabIndex = 4;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader29
+            // columnHeader46
             // 
-            this.columnHeader29.Text = "חודש";
-            this.columnHeader29.Width = 58;
+            this.columnHeader46.Text = "חודש";
+            this.columnHeader46.Width = 58;
             // 
-            // columnHeader31
+            // columnHeader47
             // 
-            this.columnHeader31.Text = "מספר כרטיס";
-            this.columnHeader31.Width = 74;
+            this.columnHeader47.Text = "מספר חשבון";
+            this.columnHeader47.Width = 89;
             // 
-            // columnHeader32
+            // columnHeader49
             // 
-            this.columnHeader32.Text = "שם הכרטיס";
-            this.columnHeader32.Width = 120;
+            this.columnHeader49.Text = "מס\' פעולות";
+            this.columnHeader49.Width = 74;
             // 
-            // columnHeader35
+            // columnHeader50
             // 
-            this.columnHeader35.Text = "סה\"כ לתשלום";
-            this.columnHeader35.Width = 89;
+            this.columnHeader50.Text = "סה\"כ זכות";
+            this.columnHeader50.Width = 89;
             // 
-            // creditCardsListView
+            // columnHeader51
             // 
-            this.creditCardsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader36,
-            this.columnHeader39,
-            this.columnHeader40,
-            this.columnHeader41,
-            this.columnHeader42,
-            this.columnHeader43});
-            this.creditCardsListView.FullRowSelect = true;
-            this.creditCardsListView.Location = new System.Drawing.Point(70, 51);
-            this.creditCardsListView.Name = "creditCardsListView";
-            this.creditCardsListView.RightToLeftLayout = true;
-            this.creditCardsListView.Size = new System.Drawing.Size(533, 118);
-            this.creditCardsListView.TabIndex = 2;
-            this.creditCardsListView.UseCompatibleStateImageBehavior = false;
-            this.creditCardsListView.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader36
-            // 
-            this.columnHeader36.Text = "מספר כרטיס";
-            this.columnHeader36.Width = 74;
-            // 
-            // columnHeader39
-            // 
-            this.columnHeader39.Text = "שם הכרטיס";
-            this.columnHeader39.Width = 120;
-            // 
-            // columnHeader40
-            // 
-            this.columnHeader40.Text = "שם בעל הכרטיס";
-            this.columnHeader40.Width = 95;
-            // 
-            // columnHeader41
-            // 
-            this.columnHeader41.Text = "תוקף";
-            this.columnHeader41.Width = 77;
-            // 
-            // columnHeader42
-            // 
-            this.columnHeader42.Text = "יום החיוב";
-            this.columnHeader42.Width = 73;
-            // 
-            // columnHeader43
-            // 
-            this.columnHeader43.Text = "חשבון בנק";
-            this.columnHeader43.Width = 73;
+            this.columnHeader51.Text = "סה\"כ חובה";
+            this.columnHeader51.Width = 74;
             // 
             // bankAccountsListView
             // 
@@ -1054,52 +981,127 @@
             this.columnHeader44.Text = "שם בעל החשבון";
             this.columnHeader44.Width = 95;
             // 
+            // creditCardsListView
+            // 
+            this.creditCardsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader36,
+            this.columnHeader39,
+            this.columnHeader40,
+            this.columnHeader41,
+            this.columnHeader42,
+            this.columnHeader43});
+            this.creditCardsListView.FullRowSelect = true;
+            this.creditCardsListView.Location = new System.Drawing.Point(70, 51);
+            this.creditCardsListView.Name = "creditCardsListView";
+            this.creditCardsListView.RightToLeftLayout = true;
+            this.creditCardsListView.Size = new System.Drawing.Size(533, 118);
+            this.creditCardsListView.TabIndex = 2;
+            this.creditCardsListView.UseCompatibleStateImageBehavior = false;
+            this.creditCardsListView.View = System.Windows.Forms.View.Details;
+            this.creditCardsListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.creditCardsListView_ColumnClick);
+            // 
+            // columnHeader36
+            // 
+            this.columnHeader36.Text = "מספר כרטיס";
+            this.columnHeader36.Width = 74;
+            // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "שם הכרטיס";
+            this.columnHeader39.Width = 120;
+            // 
+            // columnHeader40
+            // 
+            this.columnHeader40.Text = "שם בעל הכרטיס";
+            this.columnHeader40.Width = 95;
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "תוקף";
+            this.columnHeader41.Width = 77;
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Text = "יום החיוב";
+            this.columnHeader42.Width = 73;
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Text = "חשבון בנק";
+            this.columnHeader43.Width = 73;
+            // 
+            // creditCardReportsListView
+            // 
+            this.creditCardReportsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader29,
+            this.columnHeader31,
+            this.columnHeader32,
+            this.columnHeader45,
+            this.columnHeader35});
+            this.creditCardReportsListView.FullRowSelect = true;
+            this.creditCardReportsListView.Location = new System.Drawing.Point(159, 238);
+            this.creditCardReportsListView.Name = "creditCardReportsListView";
+            this.creditCardReportsListView.RightToLeftLayout = true;
+            this.creditCardReportsListView.Size = new System.Drawing.Size(444, 258);
+            this.creditCardReportsListView.TabIndex = 1;
+            this.creditCardReportsListView.UseCompatibleStateImageBehavior = false;
+            this.creditCardReportsListView.View = System.Windows.Forms.View.Details;
+            this.creditCardReportsListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.creditCardReportsListView_ColumnClick);
+            // 
+            // columnHeader29
+            // 
+            this.columnHeader29.Text = "חודש";
+            this.columnHeader29.Width = 58;
+            // 
+            // columnHeader31
+            // 
+            this.columnHeader31.Text = "מספר כרטיס";
+            this.columnHeader31.Width = 74;
+            // 
+            // columnHeader32
+            // 
+            this.columnHeader32.Text = "שם הכרטיס";
+            this.columnHeader32.Width = 120;
+            // 
             // columnHeader45
             // 
             this.columnHeader45.Text = "מס\' עסקאות";
             this.columnHeader45.Width = 74;
             // 
-            // listView4
+            // columnHeader35
             // 
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader46,
-            this.columnHeader47,
-            this.columnHeader49,
-            this.columnHeader50,
-            this.columnHeader51});
-            this.listView4.FullRowSelect = true;
-            this.listView4.Location = new System.Drawing.Point(811, 238);
-            this.listView4.Name = "listView4";
-            this.listView4.RightToLeftLayout = true;
-            this.listView4.Size = new System.Drawing.Size(399, 258);
-            this.listView4.TabIndex = 4;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
+            this.columnHeader35.Text = "סה\"כ לתשלום";
+            this.columnHeader35.Width = 89;
             // 
-            // columnHeader46
+            // tillMonthlabel
             // 
-            this.columnHeader46.Text = "חודש";
-            this.columnHeader46.Width = 58;
+            this.tillMonthlabel.AutoSize = true;
+            this.tillMonthlabel.Location = new System.Drawing.Point(289, 36);
+            this.tillMonthlabel.Name = "tillMonthlabel";
+            this.tillMonthlabel.Size = new System.Drawing.Size(24, 13);
+            this.tillMonthlabel.TabIndex = 19;
+            this.tillMonthlabel.Text = "עד:";
+            this.tillMonthlabel.Visible = false;
             // 
-            // columnHeader47
+            // tillMonthComboBox
             // 
-            this.columnHeader47.Text = "מספר חשבון";
-            this.columnHeader47.Width = 89;
+            this.tillMonthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tillMonthComboBox.FormattingEnabled = true;
+            this.tillMonthComboBox.Location = new System.Drawing.Point(319, 33);
+            this.tillMonthComboBox.Name = "tillMonthComboBox";
+            this.tillMonthComboBox.Size = new System.Drawing.Size(121, 21);
+            this.tillMonthComboBox.TabIndex = 20;
+            this.tillMonthComboBox.Visible = false;
+            this.tillMonthComboBox.SelectedIndexChanged += new System.EventHandler(this.tillMonthComboBox_SelectedIndexChanged);
             // 
-            // columnHeader49
+            // sizeLabel
             // 
-            this.columnHeader49.Text = "מס\' פעולות";
-            this.columnHeader49.Width = 74;
-            // 
-            // columnHeader50
-            // 
-            this.columnHeader50.Text = "סה\"כ זכות";
-            this.columnHeader50.Width = 89;
-            // 
-            // columnHeader51
-            // 
-            this.columnHeader51.Text = "סה\"כ חובה";
-            this.columnHeader51.Width = 74;
+            this.sizeLabel.AutoSize = true;
+            this.sizeLabel.Location = new System.Drawing.Point(511, 36);
+            this.sizeLabel.Name = "sizeLabel";
+            this.sizeLabel.Size = new System.Drawing.Size(35, 13);
+            this.sizeLabel.TabIndex = 21;
+            this.sizeLabel.Text = "label1";
             // 
             // MonthForm
             // 

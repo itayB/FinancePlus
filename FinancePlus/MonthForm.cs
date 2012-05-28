@@ -456,7 +456,7 @@ namespace FinancePlus
                 // TODO: card report validation
                 if (reportReader.isValid(cardReport))
                 {
-                    Database.creditCardReportsList.Add(cardReport);
+                    Database.addCreditCardReport(cardReport);
                     // add transaction to db
                 }
 
@@ -954,6 +954,7 @@ namespace FinancePlus
             //chart1.Series[0].Points[2].LegendText = "תקשורת";
             //chart1.Series[0].Points[3].LegendText = "תחבורה";
         }
+
         /************************************************** Bank & Credit-Cards reports **************************************************/
 
 

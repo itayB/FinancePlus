@@ -59,6 +59,7 @@
     <Compile Include="CommentForm.Designer.cs">
       <DependentUpon>CommentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common.cs" />
     <Compile Include="CreditCardChooserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +72,8 @@
     <Compile Include="FilterForm.Designer.cs">
       <DependentUpon>FilterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\GUIHandler.cs" />
+    <Compile Include="GUILayer\ListViewSorter.cs" />
     <Compile Include="GUILayer\ReportsTabPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +93,7 @@
     <Compile Include="FunctionalLayer\Logger.cs" />
     <Compile Include="FunctionalLayer\PaymentInfo.cs" />
     <Compile Include="FunctionalLayer\TransactionsSorter.cs" />
+    <Compile Include="PersistentLayer\TempFix.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>

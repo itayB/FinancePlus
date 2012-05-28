@@ -20,7 +20,8 @@ namespace FinancePlus.Storage
 
         public CreditCardReport()
         {
-            totalInternational = new Dictionary<DateTime, double>();
+            this.transactions = new ArrayList();
+            this.totalInternational = new Dictionary<DateTime, double>();
         }
 
         public double getTotal()
@@ -43,6 +44,14 @@ namespace FinancePlus.Storage
                 return false;
 
             return (this.chargeDate == p.chargeDate) && (this.creditCard == p.creditCard) && (this.total == p.total);
+        }
+
+        public override string ToString()
+        {
+            if (this.creditCard != null)
+                return Common.toShortMonthYearString(this.chargeDate) + ", (" + this.creditCard.ToString() + ")";
+            else
+                return Common.toShortMonthYearString(this.chargeDate);
         }
     }
 }

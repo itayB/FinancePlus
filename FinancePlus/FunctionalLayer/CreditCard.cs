@@ -8,6 +8,7 @@ namespace FinancePlus.PersistentLayer
     class CreditCard
     {
         // Fields
+        public int hashCode;
         public PaymentType paymentType;
         public string lastFourDigits;
         //public DateTime validFromDate;
@@ -26,6 +27,11 @@ namespace FinancePlus.PersistentLayer
                 return false;
 
             return (this.paymentType == p.paymentType) && (this.lastFourDigits.Equals(p.lastFourDigits)) && (this.expiryDate.Equals(p.expiryDate)) && (this.owner.Equals(p.owner));
+        }
+
+        public override string ToString()
+        {
+            return lastFourDigits + ", " + this.description;
         }
     }
 }

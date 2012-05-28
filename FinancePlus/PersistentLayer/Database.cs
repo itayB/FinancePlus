@@ -10,6 +10,10 @@ namespace FinancePlus.Storage
 {
     static class Database
     {
+        /************************************ Constants ************************************/
+        public const double EPSILON = 0.01;
+        /************************************ End of Constants ************************************/
+
         /************************************ Constant Strings ************************************/
         public const string NIS_SIGN = " ש\"ח";
         public const string SUM = "סה\"כ";
@@ -35,7 +39,7 @@ namespace FinancePlus.Storage
         public static HashSet<string> filterMap = new HashSet<string>();
         public static List<CreditCard> creditCardsList = new List<CreditCard>();
         public static List<BankAccount> bankAccounts = new List<BankAccount>();
-        public static List<CreditCardReport> creditCardReportsList = new List<CreditCardReport>();
+        private static List<CreditCardReport> creditCardReportsList = new List<CreditCardReport>();
         /************************************ End of Main Data Structures ************************************/
 
 
@@ -45,6 +49,26 @@ namespace FinancePlus.Storage
         public static string dataCategoriesMapFilename = "CategoriesMapData.xml";
         public static string dataFilterMapFilename = "FilterMapData.xml";
         public static string dataReportsFilename = "ReportsData.xml";
+
+        public static List<CreditCardReport> getCreditCardReportsList()
+        {
+            return creditCardReportsList;
+        }
+
+        public static void addCreditCardReport(CreditCardReport report)
+        {
+            if (!creditCardReportsList.Contains(report))
+                creditCardReportsList.Add(report);
+
+/*
+            foreach (CreditCardReport r in Database.getCreditCardReportsList())
+                if (report.Equals(r))
+                {
+                    Logger.log("This report [" + r.ToString() + "] is already exist in the system");
+                    return false;
+                }
+*/
+        }
 
         public static DateTime stringDateToDateTime(string stringDate)
         {
@@ -212,6 +236,7 @@ namespace FinancePlus.Storage
                     foreach (Transaction e in ((Month)pair.Value).getTransactions())
                     {
                         writer.WriteStartElement("Transaction");
+                        writer.WriteElementString("HashCode", e.GetHashCode().ToString());
                         writer.WriteElementString("Date", e.date.ToShortDateString());
                         writer.WriteElementString("BusinessName", e.businessName);
                         writer.WriteElementString("TransactionPrice", e.transactionPrice.ToString());
@@ -343,6 +368,10 @@ namespace FinancePlus.Storage
                                     {
                                         switch (inner.Name)
                                         {
+                                            case "HashCode":
+                                                if (inner.Read())
+                                                    e.hashCode = Convert.ToInt32(inner.Value.Trim());
+                                                break;
                                             case "Date":
                                                 if (inner.Read())
                                                     e.date = stringDateToDateTime(inner.Value.Trim());
@@ -525,6 +554,16 @@ namespace FinancePlus.Storage
                     }
                 }
             }
+        }
+
+        internal static CreditCardReport getCreditCardReport(CreditCard card, DateTime date)
+        {
+            foreach (CreditCardReport report in Database.creditCardReportsList)
+            {
+                if (report.creditCard != null && report.creditCard.Equals(card) && report.chargeDate.Equals(date))
+                    return report;
+            }
+            return null;
         }
     }
 }
